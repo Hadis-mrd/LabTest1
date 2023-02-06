@@ -5,7 +5,7 @@ public class LabTest1 {
     void sortFunction1(int unsorted[])
     {
         int len = unsorted.length;
-        for (int i = 0; i <= len; i++) 
+        for (int i = 0; i < len; i++) //FIXED: java.lang.ArrayIndexOutOfBoundsException, no longer causing i = len.
         { 
             int index = i;
             for (int j = i+1; j < len-1; j++) 
@@ -34,7 +34,7 @@ public class LabTest1 {
         int ln = unsorted.length;
         for (int i = 1; i < ln; ++i) {
             int item = unsorted[i];
-            int j = i + 1; 
+            int j = i - 1; //FIXED: Changed the addition operator to a subtraction operator. This ensures that j is never be greater than the last index of the passed array.
             
             while (j > 0 && unsorted[j] > item) { 
                 unsorted[j + 1] = unsorted[j];
