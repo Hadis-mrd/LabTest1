@@ -2,21 +2,32 @@ package labtest1;
 
 
 public class LabTest1 {
+    
+    /**
+     * Sort a given array from lowest to greatest values.
+     * 
+     * @param unsorted - The array that will be sorted.
+     */
     void sortFunction1(int unsorted[])
     {
-        int len = unsorted.length;
-        for (int i = 0; i < len; i++) //FIXED: java.lang.ArrayIndexOutOfBoundsException, no longer causing i = len.
+        int len = unsorted.length; //Save the length of the array
+        for (int i = 0; i < len; i++) //Loop through the array  //FIXED: java.lang.ArrayIndexOutOfBoundsException, no longer causing i = len.
         { 
-            int index = i;
-            for (int j = i+1; j < len; j++) //FIXED: Removed the "- 1" from the loop condition. This ensures the nested for-loop intterates over the entire array.
-                if (unsorted[j] < unsorted[index])
+            int index = i; //Keep track of the index currently at
+            for (int j = i+1; j < len; j++) //loop other the rest of the array //FIXED: Removed the "- 1" from the loop condition. This ensures the nested for-loop intterates over the entire array.
+                if (unsorted[j] < unsorted[index]) //check if there is a larger value
                     index = j;
-            int t = unsorted[index];
+            int t = unsorted[index]; //
             unsorted[index] = unsorted[i];
             unsorted[i] = t;
         }
     }
  
+    /**
+     * Sort a given array from lowest to greatest values.
+     * 
+     * @param unsorted 
+     */
     void sortFunction2(int unsorted[])
     {
         int length = unsorted.length;
@@ -29,6 +40,11 @@ public class LabTest1 {
                 }
     }
      
+    /**
+     * Sort a given array from lowest to greatest values.
+     * 
+     * @param unsorted 
+     */
     void sortFunction3(int unsorted[])
     {
         int ln = unsorted.length;
@@ -44,6 +60,11 @@ public class LabTest1 {
         }
     }
      
+    /**
+     * Print out an array to the standard output
+     * 
+     * @param arr 
+     */
     void printArray(int arr[])
     {
         int n = arr.length;
@@ -52,7 +73,19 @@ public class LabTest1 {
         System.out.println();
     }
  
-    
+    /**
+     * Main method. Creates arrays of integers. Sorts the arrays, and prints the results
+     *
+     * @param args - command line arguments
+     * 
+     * @see printArray(int arr[])
+     * 
+     * @see sortFunction1(int unsorted[])
+     * 
+     * @see sortFunction2(int unsorted[])
+     * 
+     * @see sortFunction3(int unsorted[])
+     */
     public static void main(String[] args) {
         LabTest1 obj = new LabTest1();
         
