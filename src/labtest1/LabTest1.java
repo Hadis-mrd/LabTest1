@@ -49,7 +49,7 @@ public class LabTest1 {
     }
  
     /**
-     * sorts an array of integers from greatest to least
+     * sorts an array of integers from least to greatest
      * @param unsorted - array to be sorted
      */
     public void sortFunction2(int unsorted[])
@@ -57,7 +57,7 @@ public class LabTest1 {
         int length = unsorted.length;
         for (int i = 0; i < length; i++)
             for (int j = i+1; j < length; j++)
-                if (unsorted[j] > unsorted[i]) { 
+                if (unsorted[j] < unsorted[i]) { 
                     int t = unsorted[i];
                     unsorted[i] = unsorted[j];
                     unsorted[j] = t;
@@ -65,7 +65,7 @@ public class LabTest1 {
     }
      
     /**
-     * sorts an array of integers from greatest to least 
+     * sorts an array of integers from least to greatest 
      * @param unsorted - array to be sorted
      */
     public void sortFunction3(int unsorted[])
@@ -75,14 +75,16 @@ public class LabTest1 {
             
             int item = unsorted[i];
             
-            int j = i + 1; 
+            int j = i - 1; 
             
-            while (j < ln && unsorted[j] > item) { 
+            while (j >=0 && unsorted[j] > item) { 
                 
-                unsorted[i] = unsorted[j];
+                unsorted[j+1] = unsorted[j];
                 
-                unsorted[j] = item;
+                j = j-1;
+                
             }
+            unsorted[j+1] = item;
         }
     }
      
