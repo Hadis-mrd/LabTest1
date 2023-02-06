@@ -5,12 +5,14 @@ public class LabTest1 {
     void sortFunction1(int unsorted[])
     {
         int len = unsorted.length;
-        for (int i = 0; i <= len; i++) 
+        for (int i = 0; i <= len-1; i++) 
         { 
             int index = i;
-            for (int j = i+1; j < len-1; j++) 
+            for (int j = i+1; j < len; j++) 
+            {
                 if (unsorted[j] < unsorted[index])
                     index = j;
+            }
             int t = unsorted[index];
             unsorted[index] = unsorted[i];
             unsorted[i] = t;
@@ -20,27 +22,35 @@ public class LabTest1 {
     void sortFunction2(int unsorted[])
     {
         int length = unsorted.length;
-        for (int i = 0; i < length - 1; i++)
-            for (int j = 0; j < length - i - 1; j++)
-                if (unsorted[j] > unsorted[i]) { 
-                    int t = unsorted[j];
-                    unsorted[j] = unsorted[j + 1];
-                    unsorted[j + 1] = t;
+        for (int i = 0; i <= length - 1; i++)
+        {
+           for (int j = 1; j < length - i - 1; j++)
+            {
+                if (unsorted[j+1] < unsorted[i+1]) 
+                { 
+                    int t = unsorted[j+1];
+                    unsorted[j+1] = unsorted[i];
+                    unsorted[i] = t;
                 }
+            } 
+        }
+            
     }
      
     void sortFunction3(int unsorted[])
     {
         int ln = unsorted.length;
-        for (int i = 1; i < ln; ++i) {
+        for (int i = 1; i < ln; ++i) 
+        {
             int item = unsorted[i];
-            int j = i + 1; 
+            int j = i; 
             
-            while (j > 0 && unsorted[j] > item) { 
-                unsorted[j + 1] = unsorted[j];
+            while (j > 0 && unsorted[j-1] > item) 
+            { 
+                unsorted[j] = unsorted[j-1];
                 j = j - 1;
             }
-            unsorted[j + 1] = item;
+            unsorted[j] = item;
         }
     }
      
@@ -74,5 +84,4 @@ public class LabTest1 {
         obj.printArray(unsorted3);
        
     }
-    
 }
