@@ -1,14 +1,18 @@
 package labtest1;
 
-
+/**
+ *
+ * @author zaviaarrizvi
+ */
 public class LabTest1 {
+    
     void sortFunction1(int unsorted[])
     {
         int len = unsorted.length;
-        for (int i = 0; i <= len; i++) 
+        for (int i = 0; i < len; i++) 
         { 
             int index = i;
-            for (int j = i+1; j < len-1; j++) 
+            for (int j = i+1; j < len; j++) 
                 if (unsorted[j] < unsorted[index])
                     index = j;
             int t = unsorted[index];
@@ -22,7 +26,7 @@ public class LabTest1 {
         int length = unsorted.length;
         for (int i = 0; i < length - 1; i++)
             for (int j = 0; j < length - i - 1; j++)
-                if (unsorted[j] > unsorted[i]) { 
+                if (unsorted[j] > unsorted[j + 1]) { 
                     int t = unsorted[j];
                     unsorted[j] = unsorted[j + 1];
                     unsorted[j + 1] = t;
@@ -34,9 +38,9 @@ public class LabTest1 {
         int ln = unsorted.length;
         for (int i = 1; i < ln; ++i) {
             int item = unsorted[i];
-            int j = i + 1; 
+            int j = i - 1; 
             
-            while (j > 0 && unsorted[j] > item) { 
+            while (j >= 0 && unsorted[j] > item) { 
                 unsorted[j + 1] = unsorted[j];
                 j = j - 1;
             }
@@ -52,7 +56,10 @@ public class LabTest1 {
         System.out.println();
     }
  
-    
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         LabTest1 obj = new LabTest1();
         
@@ -60,8 +67,6 @@ public class LabTest1 {
         obj.sortFunction1(unsorted);
         System.out.println("Sorted array1 : ");
         obj.printArray(unsorted);
-        
-        
         
         int unsorted2[] = {64,25,12,22,11};
         obj.sortFunction2(unsorted2);
@@ -72,7 +77,5 @@ public class LabTest1 {
         obj.sortFunction3(unsorted3);
         System.out.println("Sorted array3 : ");
         obj.printArray(unsorted3);
-       
     }
-    
 }
