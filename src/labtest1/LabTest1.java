@@ -1,14 +1,17 @@
 package labtest1;
-
+/**
+ *
+ * @author epgae
+ */
 
 public class LabTest1 {
     void sortFunction1(int unsorted[])
     {
         int len = unsorted.length;
-        for (int i = 0; i <= len; i++) 
+        for (int i = 0; i < len; i++) //<, previously <=, caused it to go out of array
         { 
             int index = i;
-            for (int j = i+1; j < len-1; j++) 
+            for (int j = i+1; j < len; j++) //< len instead of len-1, to reach full bounds of array
                 if (unsorted[j] < unsorted[index])
                     index = j;
             int t = unsorted[index];
@@ -22,7 +25,7 @@ public class LabTest1 {
         int length = unsorted.length;
         for (int i = 0; i < length - 1; i++)
             for (int j = 0; j < length - i - 1; j++)
-                if (unsorted[j] > unsorted[i]) { 
+                if (unsorted[j] > unsorted[j+ 1]) { //j > j+1 not > i. 
                     int t = unsorted[j];
                     unsorted[j] = unsorted[j + 1];
                     unsorted[j + 1] = t;
@@ -30,19 +33,19 @@ public class LabTest1 {
     }
      
     void sortFunction3(int unsorted[])
-    {
-        int ln = unsorted.length;
-        for (int i = 1; i < ln; ++i) {
-            int item = unsorted[i];
-            int j = i + 1; 
-            
-            while (j > 0 && unsorted[j] > item) { 
-                unsorted[j + 1] = unsorted[j];
-                j = j - 1;
-            }
-            unsorted[j + 1] = item;
+{
+    int ln = unsorted.length;
+    for (int i = 1; i < ln; i++) {
+        int item = unsorted[i];
+        int j = i - 1; //j - 1 instead of + 1 
+        
+        while (j >= 0 && unsorted[j] > item) {  //can be = to 0
+            unsorted[j + 1] = unsorted[j];
+            j--; //changed the way it decreases
         }
+        unsorted[j + 1] = item;
     }
+}
      
     void printArray(int arr[])
     {
@@ -68,7 +71,7 @@ public class LabTest1 {
         System.out.println("Sorted array2 : ");
         obj.printArray(unsorted2);
         
-        int unsorted3[] = {64,25,12,22,11};
+        int unsorted3[] = {64,25,12,22,11}; //causing most errors after first fixes
         obj.sortFunction3(unsorted3);
         System.out.println("Sorted array3 : ");
         obj.printArray(unsorted3);
