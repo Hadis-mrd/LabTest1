@@ -1,6 +1,6 @@
 package labtest1;
 
-//arisariawan
+//arisariawanLabTest1
 public class LabTest1 {
     
     /**
