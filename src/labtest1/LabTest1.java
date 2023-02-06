@@ -8,7 +8,7 @@ public class LabTest1 {
         for (int i = 0; i < len; i++) //FIXED: java.lang.ArrayIndexOutOfBoundsException, no longer causing i = len.
         { 
             int index = i;
-            for (int j = i+1; j < len-1; j++) 
+            for (int j = i+1; j < len; j++) //FIXED: Removed the "- 1" from the loop condition. This ensures the nested for-loop intterates over the entire array.
                 if (unsorted[j] < unsorted[index])
                     index = j;
             int t = unsorted[index];
@@ -20,12 +20,12 @@ public class LabTest1 {
     void sortFunction2(int unsorted[])
     {
         int length = unsorted.length;
-        for (int i = 0; i < length - 1; i++)
-            for (int j = 0; j < length - i - 1; j++)
+        for (int i = 0; i < length; i++) //FIXED: Removed sort restrictions. Ensures the loops itterated over the entire array, so that it sorts the entire array.
+            for (int j = 0; j < length; j++)
                 if (unsorted[j] > unsorted[i]) { 
                     int t = unsorted[j];
-                    unsorted[j] = unsorted[j + 1];
-                    unsorted[j + 1] = t;
+                    unsorted[j] = unsorted[i]; //FIXED: The swapping operation. There were index offsets that ment the swap was not just the 2 indexes.
+                    unsorted[i] = t;
                 }
     }
      
@@ -36,7 +36,7 @@ public class LabTest1 {
             int item = unsorted[i];
             int j = i - 1; //FIXED: Changed the addition operator to a subtraction operator. This ensures that j is never be greater than the last index of the passed array.
             
-            while (j > 0 && unsorted[j] > item) { 
+            while (j >= 0 && unsorted[j] > item) { 
                 unsorted[j + 1] = unsorted[j];
                 j = j - 1;
             }
