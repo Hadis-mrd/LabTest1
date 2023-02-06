@@ -2,13 +2,15 @@ package labtest1;
 
 
 public class LabTest1 {
+   
+    
     void sortFunction1(int unsorted[])
     {
         int len = unsorted.length;
-        for (int i = 0; i <= len; i++) 
+        for (int i = 0; i < len-1; i++) //the should run from 0 - len - 1(since arrays take elements of one less then what is entered, they start elements at 0) - This will prevent out of bounnds array of index
         { 
             int index = i;
-            for (int j = i+1; j < len-1; j++) 
+            for (int j = i+1; j < len; j++) //should be j < len, to prevent array out of bounds for accessing elements
                 if (unsorted[j] < unsorted[index])
                     index = j;
             int t = unsorted[index];
@@ -22,7 +24,8 @@ public class LabTest1 {
         int length = unsorted.length;
         for (int i = 0; i < length - 1; i++)
             for (int j = 0; j < length - i - 1; j++)
-                if (unsorted[j] > unsorted[i]) { 
+                if (unsorted[j] > unsorted[j+1]) //change to unsorted [j] > unsorted [j+1], you are comparing the arrays in the 'j' for loop 
+                { 
                     int t = unsorted[j];
                     unsorted[j] = unsorted[j + 1];
                     unsorted[j + 1] = t;
@@ -34,10 +37,10 @@ public class LabTest1 {
         int ln = unsorted.length;
         for (int i = 1; i < ln; ++i) {
             int item = unsorted[i];
-            int j = i + 1; 
+            int j = i - 1; //j should be decremented to traverse the array in reverse order 
             
-            while (j > 0 && unsorted[j] > item) { 
-                unsorted[j + 1] = unsorted[j];
+            while (j >= 0 && unsorted[j] > item) { //j should start at 0 and keep incrementing do to the j to take into account of every element in the array and make sure no out of bounds array exception. j will increment itself for each loop due to the j+1 in the loop
+                unsorted[j+1] = unsorted[j]; //the new unsorted of element j, becomes the element of one less than itself 
                 j = j - 1;
             }
             unsorted[j + 1] = item;
