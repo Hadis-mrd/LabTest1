@@ -1,4 +1,18 @@
 package labtest1;
+
+/**
+ * LabTest1 class contains methods to sort an array of integers using three different sorting algorithms.
+ * sortFunction4 sorts the array using the insertion sort algorithm.
+ * sortFunction5 sorts the array using the counting sort algorithm.
+ * sortFunction6 sorts the array using the bubble sort algorithm.
+ * printArray is used to print the sorted array.
+ * 
+ * @author  Brendon Milagrosa
+ * @version 2
+ * @since   2023-02-07
+ */
+
+
 import java.util.Arrays;
 
 public class LabTest1 {
