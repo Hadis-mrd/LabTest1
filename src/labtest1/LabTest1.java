@@ -10,7 +10,8 @@ import java.util.Arrays;
 public class LabTest1 {
     
     /**
-     * @param unsorted Will take an unsorted array and sort it in ascending order
+     * Will take an unsorted array and sort it in ascending order.
+     * @param unsorted an unsorted array
      */
     
     public void sortFunction4(int unsorted[])
@@ -33,7 +34,8 @@ public class LabTest1 {
     }
  
     /**
-     * @param unsorted Will take an unsorted array and sort it in ascending order
+     * Will take an unsorted array and sort it in ascending order.
+     * @param unsorted an unsorted array
      */
     
     public void sortFunction5(int unsorted[]) 
@@ -68,7 +70,8 @@ public class LabTest1 {
     }
     
     /**
-     * @param unsorted Will take an unsorted array and sort it in ascending order
+     * Will take an unsorted array and sort it in ascending order.
+     * @param unsorted an unsorted array
      */
      
     public void sortFunction6(int unsorted[]) 
@@ -107,7 +110,8 @@ public class LabTest1 {
     }
      
     /**
-     * @param arr Takes an array and prints it in the correct order entered
+     * Takes an array and prints it in the correct order entered
+     * @param arr any array
      */
     
     public void printArray(int arr[])
