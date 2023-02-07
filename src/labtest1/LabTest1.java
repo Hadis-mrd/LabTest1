@@ -1,9 +1,20 @@
 package labtest1;
 
+/**
+ * @author Rehan Siddiqi (rsiddiqi)
+ * @since 2023-02-07
+ */
+
 import java.util.Arrays;
 
 public class LabTest1 {
-
+    
+    /** 
+     * sortFunction4
+     * example of sorting function that has been debugged
+     * @param unsorted integer array which has been sent down to be sorted from
+     * least to greatest
+     */
     public void sortFunction4(int unsorted[]) {
         int index = 0;
         int n = unsorted.length;
@@ -21,7 +32,13 @@ public class LabTest1 {
             }
         }
     }
-
+    
+    /** 
+     * sortFunction5
+     * example of sorting function that has been debugged
+     * @param unsorted integer array which has been sent down to be sorted from
+     * least to greatest
+     */
     public void sortFunction5(int unsorted[]) {
         int n = unsorted.length;
         int min = unsorted[0];
@@ -54,6 +71,12 @@ public class LabTest1 {
         }
     }
 
+    /** 
+     * sortFunction6
+     * example of sorting function that has been debugged
+     * @param unsorted integer array which has been sent down to be sorted from
+     * least to greatest
+     */
     public void sortFunction6(int unsorted[]) {
         boolean isSorted = false;
         int n = unsorted.length;
@@ -80,7 +103,12 @@ public class LabTest1 {
             }
         }
     }
-
+    
+    /** 
+     * printArray
+     * method is sent an array which it will print out all its stored values
+     * @param arr integer array which is sent to method to be printed
+     */
     public void printArray(int arr[]) {
         int n = arr.length;
         for (int i = 0; i < n; ++i) {
@@ -88,7 +116,11 @@ public class LabTest1 {
         }
         System.out.println();
     }
-
+   
+    /** 
+     * main
+     * calls upon various sorting methods and sends down an int array each time
+     */
     public static void main(String[] args) {
         LabTest1 obj = new LabTest1();
 
