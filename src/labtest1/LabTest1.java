@@ -2,14 +2,19 @@ package labtest1;
 import java.util.Arrays;
 
 public class LabTest1 {
+    
+    /** 
+     * A least to greatest sorting function
+     * @param unsorted[] an unsorted integer array 
+     */
     void sortFunction4(int unsorted[])
     {
         int index = 0;
         int n = unsorted.length;
-        while (index <= n) { 
+        while (index < n) {
             if (index == 0)
                 index++; 
-            if (unsorted[index - 1] > unsorted[index]) 
+            if (unsorted[index - 1] < unsorted[index]) 
                 index++;
             else {
                 int temp = 0;
@@ -21,18 +26,23 @@ public class LabTest1 {
         }
     }
  
+    
+    /** 
+     * A least to greatest sorting function
+     * @param unsorted[] an unsorted integer array 
+     */
     void sortFunction5(int unsorted[]) 
     {
         int n = unsorted.length;
         int min = unsorted[0];
-        int max = unsorted[n];
+        int max = unsorted[n - 1];
         int range, i, j, index;
  
         for(int a=0; a<n; a++)
         {
-            if(unsorted[a] < max) 
+            if(unsorted[a] > max) 
                 max = unsorted[a];
-            if(unsorted[a] > min) 
+            if(unsorted[a] < min) 
                 min = unsorted[a];
         }
  
@@ -51,6 +61,11 @@ public class LabTest1 {
                 unsorted[index++]=j+min;
     }
      
+    
+    /** 
+     * A least to greatest sorting function
+     * @param unsorted[] an unsorted integer array 
+     */
     void sortFunction6(int unsorted[]) 
     {
         boolean isSorted = false;
@@ -62,7 +77,7 @@ public class LabTest1 {
  
             for (int i=1; i<=n-2; i=i+2)
             {
-                if (unsorted[i + 1] > unsorted[i]) 
+                if (unsorted[i + 1] < unsorted[i]) 
                 {
                     temp = unsorted[i];
                     unsorted[i] = unsorted[i+1];
@@ -84,6 +99,11 @@ public class LabTest1 {
         }
     }
      
+    
+    /** 
+     * Prints an array
+     * @param arr[] integer array to print
+     */
     void printArray(int arr[])
     {
         int n = arr.length;
@@ -93,6 +113,11 @@ public class LabTest1 {
     }
  
     
+    
+    /** 
+     * Test functions
+     * @param args command line parameters
+     */
     public static void main(String[] args) {
         LabTest1 obj = new LabTest1();
         
