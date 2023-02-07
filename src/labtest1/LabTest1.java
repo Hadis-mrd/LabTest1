@@ -1,4 +1,5 @@
 package labtest1;
+
 import java.util.Arrays;
 
 public class LabTest1 {
@@ -6,14 +7,13 @@ public class LabTest1 {
     {
         int index = 0;
         int n = unsorted.length;
-        while (index <= n) { 
+        while (index < n) { 
             if (index == 0)
                 index++; 
-            if (unsorted[index - 1] > unsorted[index]) 
+            if (unsorted[index - 1] < unsorted[index]) 
                 index++;
             else {
-                int temp = 0;
-                temp = unsorted[index];
+               int temp = unsorted[index];
                 unsorted[index] = unsorted[index - 1];
                 unsorted[index - 1] = temp;
                 index--;
@@ -58,7 +58,7 @@ public class LabTest1 {
         while (!isSorted)
         {
             isSorted = true;
-            int temp =0;
+            int temp ;
  
             for (int i=1; i<=n-2; i=i+2)
             {
@@ -93,7 +93,8 @@ public class LabTest1 {
     }
  
     
-    public static void main(String[] args) {
+    public static void main(String[] args){
+    
         LabTest1 obj = new LabTest1();
         
         int unsorted4[] = {64,25,12,22,11};
