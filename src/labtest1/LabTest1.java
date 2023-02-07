@@ -107,7 +107,11 @@ public class LabTest1 {
             }
         }
     }
-     
+    
+    /**
+     * Takes in a array of integers and prints each int in the array
+     * @param arr is an array of integers
+    */
     void printArray(int arr[])
     {
         int n = arr.length;
@@ -116,7 +120,10 @@ public class LabTest1 {
         System.out.println();
     }
  
-    
+    /**
+     * 
+     * @param args 
+    */
     public static void main(String[] args) {
         LabTest1 obj = new LabTest1();
         
