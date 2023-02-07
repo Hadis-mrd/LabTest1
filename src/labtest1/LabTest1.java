@@ -1,7 +1,19 @@
 package labtest1;
 import java.util.Arrays;
-
+/**
+ * 
+ * @author Ryan Vemulapalli
+ * @version 1.1
+ * @since 2-7-2023
+*/
 public class LabTest1 {
+    
+    /**
+     * Takes in a unsorted int array and when passed through this method,
+     * the array is sorted from least to greatest
+     * 
+     * @param unsorted integer array, 
+    */
     void sortFunction4(int unsorted[])
     {
         int index = 0;
@@ -20,7 +32,13 @@ public class LabTest1 {
             }
         }
     }
- 
+    
+    /**
+     * Takes in a unsorted int array and when passed through this method,
+     * the array is sorted from least to greatest
+     * 
+     * @param unsorted integer array, 
+    */
     void sortFunction5(int unsorted[]) 
     {
         int n = unsorted.length;
@@ -50,7 +68,13 @@ public class LabTest1 {
             while(phole[j]-->0)
                 unsorted[index++]=j+min;
     }
-     
+    
+    /**
+     * Takes in a unsorted int array and when passed through this method,
+     * the array is sorted from least to greatest
+     * 
+     * @param unsorted integer array, 
+    */
     void sortFunction6(int unsorted[]) 
     {
         boolean isSorted = false;
@@ -60,7 +84,7 @@ public class LabTest1 {
             isSorted = true;
             int temp =0;
  
-            for (int i=1; i<=n-2; i++) //Was adding to each time for some reason, changed to i++
+            for (int i=1; i<=n-2; i++) //Was adding two each time for some reason, changed to i++
             {
                 if (unsorted[i + 1] < unsorted[i]) // Changed to < does not make sense as a >
                 {
