@@ -7,6 +7,7 @@ public class LabTest1 {
     void sortFunction4(int unsorted[]) {
         int index = 0;
         int n = unsorted.length;
+        //changed to equal sign
         while (index < n) {
             if (index == 0) {
                 index++;
