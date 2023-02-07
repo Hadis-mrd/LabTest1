@@ -6,17 +6,18 @@ public class LabTest1 {
     {
         int index = 0;
         int n = unsorted.length;
-        while (index <= n) { 
+        while (index < n) { 
             if (index == 0)
                 index++; 
-            if (unsorted[index - 1] > unsorted[index]) 
-                index++;
-            else {
+            else if (unsorted[index - 1] > unsorted[index]) {
                 int temp = 0;
                 temp = unsorted[index];
                 unsorted[index] = unsorted[index - 1];
                 unsorted[index - 1] = temp;
                 index--;
+            }
+            else {
+                index++;
             }
         }
     }
@@ -25,14 +26,14 @@ public class LabTest1 {
     {
         int n = unsorted.length;
         int min = unsorted[0];
-        int max = unsorted[n];
+        int max = unsorted[n-1];
         int range, i, j, index;
  
         for(int a=0; a<n; a++)
         {
-            if(unsorted[a] < max) 
+            if(unsorted[a] > max) 
                 max = unsorted[a];
-            if(unsorted[a] > min) 
+            if(unsorted[a] < min) 
                 min = unsorted[a];
         }
  
@@ -60,27 +61,16 @@ public class LabTest1 {
             isSorted = true;
             int temp =0;
  
-            for (int i=1; i<=n-2; i=i+2)
+            for (int i=0; i<=n-2; i++)
             {
-                if (unsorted[i + 1] > unsorted[i]) 
+                if (unsorted[i + 1] < unsorted[i]) 
                 {
                     temp = unsorted[i];
                     unsorted[i] = unsorted[i+1];
                     unsorted[i+1] = temp;
                     isSorted = false;
                 }
-            }
- 
-            for (int i=0; i<=n-2; i=i+2)
-            {
-                if (unsorted[i] > unsorted[i+1])
-                {
-                    temp = unsorted[i];
-                    unsorted[i] = unsorted[i+1];
-                    unsorted[i+1] = temp;
-                    isSorted = false;
-                }
-            }
+            }   
         }
     }
      
