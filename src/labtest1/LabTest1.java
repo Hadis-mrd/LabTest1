@@ -2,7 +2,13 @@ package labtest1;
 import java.util.Arrays;
 
 public class LabTest1 {
-    void sortFunction4(int unsorted[])
+    /** 
+     * sortFunction4
+     * method that has been debugged in order to print out correct array in least to greatest
+     * @param unsorted array that gets sent down 
+     * @author Syed Uzair Ali
+     */
+    public void sortFunction4(int unsorted[])
     {
         int index = 0;
         int n = unsorted.length;
@@ -20,8 +26,14 @@ public class LabTest1 {
             }
         }
     }
- 
-    void sortFunction5(int unsorted[]) 
+    
+    /** 
+     * sortFunction5
+     * method that has been debugged in order to print out correct array in least to greatest
+     * @param unsorted array that gets sent down 
+     * @author Syed Uzair Ali
+     */
+    public void sortFunction5(int unsorted[]) 
     {
         int n = unsorted.length;
         int min = unsorted[0];
@@ -51,7 +63,13 @@ public class LabTest1 {
                 unsorted[index++]=j+min;
     }
      
-    void sortFunction6(int unsorted[]) 
+    /** 
+     * sortFunction6
+     * method that has been debugged in order to print out correct array in least to greatest
+     * @param unsorted array that gets sent down 
+     * @author Syed Uzair Ali
+     */
+    public void sortFunction6(int unsorted[]) 
     {
         boolean isSorted = false;
         int n = unsorted.length;
@@ -83,8 +101,13 @@ public class LabTest1 {
             }
         }
     }
-     
-    void printArray(int arr[])
+     /** 
+     * printArray method 
+     * method that prints out the arrays 
+     * @param arr array that gets sent down to print the arrays
+     * @author Syed Uzair Ali
+     */
+    public void printArray(int arr[])
     {
         int n = arr.length;
         for (int i=0; i<n; ++i)
