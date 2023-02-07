@@ -1,46 +1,86 @@
 package labtest1;
-
+import java.util.Arrays;
 
 public class LabTest1 {
-    void sortFunction1(int unsorted[])
+    void sortFunction4(int unsorted[])
     {
-        int len = unsorted.length;
-        for (int i = 0; i <= len; i++) 
-        { 
-            int index = i;
-            for (int j = i+1; j < len-1; j++) 
-                if (unsorted[j] < unsorted[index])
-                    index = j;
-            int t = unsorted[index];
-            unsorted[index] = unsorted[i];
-            unsorted[i] = t;
+        int index = 0;
+        int n = unsorted.length;
+        while (index <= n) { 
+            if (index == 0)
+                index++; 
+            if (unsorted[index - 1] > unsorted[index]) 
+                index++;
+            else {
+                int temp = 0;
+                temp = unsorted[index];
+                unsorted[index] = unsorted[index - 1];
+                unsorted[index - 1] = temp;
+                index--;
+            }
         }
     }
  
-    void sortFunction2(int unsorted[])
+    void sortFunction5(int unsorted[]) 
     {
-        int length = unsorted.length;
-        for (int i = 0; i < length - 1; i++)
-            for (int j = 0; j < length - i - 1; j++)
-                if (unsorted[j] > unsorted[i]) { 
-                    int t = unsorted[j];
-                    unsorted[j] = unsorted[j + 1];
-                    unsorted[j + 1] = t;
-                }
+        int n = unsorted.length;
+        int min = unsorted[0];
+        int max = unsorted[n];
+        int range, i, j, index;
+ 
+        for(int a=0; a<n; a++)
+        {
+            if(unsorted[a] < max) 
+                max = unsorted[a];
+            if(unsorted[a] > min) 
+                min = unsorted[a];
+        }
+ 
+        range = max - min + 1;
+        int[] phole = new int[range];
+        Arrays.fill(phole, 0);
+ 
+        for(i = 0; i<n; i++)
+            phole[unsorted[i] - min]++;
+ 
+         
+        index = 0;
+ 
+        for(j = 0; j<range; j++)
+            while(phole[j]-->0)
+                unsorted[index++]=j+min;
     }
      
-    void sortFunction3(int unsorted[])
+    void sortFunction6(int unsorted[]) 
     {
-        int ln = unsorted.length;
-        for (int i = 1; i < ln; ++i) {
-            int item = unsorted[i];
-            int j = i + 1; 
-            
-            while (j > 0 && unsorted[j] > item) { 
-                unsorted[j + 1] = unsorted[j];
-                j = j - 1;
+        boolean isSorted = false;
+        int n = unsorted.length;
+        while (!isSorted)
+        {
+            isSorted = true;
+            int temp =0;
+ 
+            for (int i=1; i<=n-2; i=i+2)
+            {
+                if (unsorted[i + 1] > unsorted[i]) 
+                {
+                    temp = unsorted[i];
+                    unsorted[i] = unsorted[i+1];
+                    unsorted[i+1] = temp;
+                    isSorted = false;
+                }
             }
-            unsorted[j + 1] = item;
+ 
+            for (int i=0; i<=n-2; i=i+2)
+            {
+                if (unsorted[i] > unsorted[i+1])
+                {
+                    temp = unsorted[i];
+                    unsorted[i] = unsorted[i+1];
+                    unsorted[i+1] = temp;
+                    isSorted = false;
+                }
+            }
         }
     }
      
@@ -56,22 +96,21 @@ public class LabTest1 {
     public static void main(String[] args) {
         LabTest1 obj = new LabTest1();
         
-        int unsorted[] = {64,25,12,22,11};
-        obj.sortFunction1(unsorted);
-        System.out.println("Sorted array1 : ");
-        obj.printArray(unsorted);
+        int unsorted4[] = {64,25,12,22,11};
+        obj.sortFunction4(unsorted4);
+        System.out.println("Sorted array4 : ");
+        obj.printArray(unsorted4);
         
         
+        int unsorted5[] = {64,25,12,22,11};
+        obj.sortFunction5(unsorted5);
+        System.out.println("Sorted array5 : ");
+        obj.printArray(unsorted5);
         
-        int unsorted2[] = {64,25,12,22,11};
-        obj.sortFunction2(unsorted2);
-        System.out.println("Sorted array2 : ");
-        obj.printArray(unsorted2);
-        
-        int unsorted3[] = {64,25,12,22,11};
-        obj.sortFunction3(unsorted3);
-        System.out.println("Sorted array3 : ");
-        obj.printArray(unsorted3);
+        int unsorted6[] = {64,25,12,22,11};
+        obj.sortFunction6(unsorted6);
+        System.out.println("Sorted array6 : ");
+        obj.printArray(unsorted6);
        
     }
     
