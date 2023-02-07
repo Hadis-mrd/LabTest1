@@ -6,10 +6,10 @@ public class LabTest1 {
     {
         int index = 0;
         int n = unsorted.length;
-        while (index <= n) { 
+        while (index < n) { //Changed from <= to < to fix the java.lang.ArrayIndexOutOfBoundsException
             if (index == 0)
                 index++; 
-            if (unsorted[index - 1] > unsorted[index]) 
+            if (unsorted[index - 1] < unsorted[index]) //Was doing greatest to least so made it < rather than >
                 index++;
             else {
                 int temp = 0;
@@ -25,14 +25,14 @@ public class LabTest1 {
     {
         int n = unsorted.length;
         int min = unsorted[0];
-        int max = unsorted[n];
+        int max = unsorted[n-1]; // Added -1 to fix: java.lang.ArrayIndexOutOfBoundsException
         int range, i, j, index;
  
         for(int a=0; a<n; a++)
         {
-            if(unsorted[a] < max) 
+            if(unsorted[a] > max) // Changed to > does not make sense as a <
                 max = unsorted[a];
-            if(unsorted[a] > min) 
+            if(unsorted[a] < min) // Changed to < does not make sense as a >
                 min = unsorted[a];
         }
  
@@ -40,7 +40,7 @@ public class LabTest1 {
         int[] phole = new int[range];
         Arrays.fill(phole, 0);
  
-        for(i = 0; i<n; i++)
+        for(i = 0; i < n; i++)
             phole[unsorted[i] - min]++;
  
          
@@ -60,9 +60,9 @@ public class LabTest1 {
             isSorted = true;
             int temp =0;
  
-            for (int i=1; i<=n-2; i=i+2)
+            for (int i=1; i<=n-2; i++) //Was adding to each time for some reason, changed to i++
             {
-                if (unsorted[i + 1] > unsorted[i]) 
+                if (unsorted[i + 1] < unsorted[i]) // Changed to < does not make sense as a >
                 {
                     temp = unsorted[i];
                     unsorted[i] = unsorted[i+1];
