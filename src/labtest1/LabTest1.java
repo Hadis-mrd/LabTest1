@@ -3,7 +3,7 @@ import java.util.Arrays;
 /**
  * 
  * @author Ryan Vemulapalli
- * @version 1.1
+ * @version 1.2
  * @since 2-7-2023
 */
 public class LabTest1 {
@@ -121,7 +121,8 @@ public class LabTest1 {
     }
  
     /**
-     * 
+     * Uses methods from LabTest1 class to sort the given integer arrays
+     * from least to greatest and print out the result.
      * @param args 
     */
     public static void main(String[] args) {
