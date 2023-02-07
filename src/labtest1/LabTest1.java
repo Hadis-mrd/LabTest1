@@ -1,17 +1,24 @@
 package labtest1;
 import java.util.Arrays;
 
-public class LabTest1 {
+public class LabTest1 
+{
     void sortFunction4(int unsorted[])
     {
         int index = 0;
         int n = unsorted.length;
-        while (index <= n) { 
+        while (index < n) //removed equals sign since no index when array is equal to 5
+        { 
             if (index == 0)
+            {
                 index++; 
-            if (unsorted[index - 1] > unsorted[index]) 
+            }
+            else if (unsorted[index - 1] < unsorted[index]) //flipped greaterthan less than sign
+            {
                 index++;
-            else {
+            }
+            else 
+            {
                 int temp = 0;
                 temp = unsorted[index];
                 unsorted[index] = unsorted[index - 1];
@@ -25,14 +32,14 @@ public class LabTest1 {
     {
         int n = unsorted.length;
         int min = unsorted[0];
-        int max = unsorted[n];
+        int max = unsorted[n-1]; //no 5th element in array 
         int range, i, j, index;
  
         for(int a=0; a<n; a++)
         {
-            if(unsorted[a] < max) 
+            if(unsorted[a] > max) //flipp sign
                 max = unsorted[a];
-            if(unsorted[a] > min) 
+            if(unsorted[a] < min) //flipp sign
                 min = unsorted[a];
         }
  
@@ -62,7 +69,7 @@ public class LabTest1 {
  
             for (int i=1; i<=n-2; i=i+2)
             {
-                if (unsorted[i + 1] > unsorted[i]) 
+                if (unsorted[i + 1] < unsorted[i]) //fliiped greater than equal to sign
                 {
                     temp = unsorted[i];
                     unsorted[i] = unsorted[i+1];
@@ -87,8 +94,9 @@ public class LabTest1 {
     void printArray(int arr[])
     {
         int n = arr.length;
-        for (int i=0; i<n; ++i)
+        for (int i=0; i<n; ++i){
             System.out.print(arr[i]+" ");
+        }
         System.out.println();
     }
  
@@ -111,7 +119,6 @@ public class LabTest1 {
         obj.sortFunction6(unsorted6);
         System.out.println("Sorted array6 : ");
         obj.printArray(unsorted6);
-       
     }
     
 }
