@@ -21,13 +21,13 @@ public class LabTest1 {
             }
             if (unsorted[index - 1] < unsorted[index]) // if element is greator 
             {
-                index++; //increment index
+                index--; //increment index
             } else {
                 int temp = 0;
                 temp = unsorted[index]; // second element
                 unsorted[index] = unsorted[index - 1]; // second becomes first
                 unsorted[index - 1] = temp; // first is in temp
-                index++; //decr?
+                index--; //decr?
             }
         }
     }
@@ -39,11 +39,11 @@ public class LabTest1 {
         int range, i, j, index;
 
         for (int a = 0; a < n; a++) {
-            if (unsorted[a] > max) // if that element<first element
+            if (unsorted[a] < max) // if that element<first element
             {
                 max = unsorted[a]; // max is that element
             }
-            if (unsorted[a] < min) { // if element is < first element
+            if (unsorted[a] > min) { // if element is < first element
                 min = unsorted[a]; // min=element
             }
         }
@@ -72,7 +72,7 @@ public class LabTest1 {
             isSorted = true;
             int temp = 0;
 
-            for (int i = 1; i <= n - 2; i = i + 2) {
+            for (int i = 1; i <= n - 2; i = i++) {
                 if (unsorted[i + 1] < unsorted[i]) {
                     temp = unsorted[i];
                     unsorted[i] = unsorted[i + 1];
@@ -114,10 +114,10 @@ public class LabTest1 {
         System.out.println("Sorted array5 : ");
         obj.printArray(unsorted5);
 
-        int unsorted6[] = {64, 25, 12, 22, 11};
-        obj.sortFunction6(unsorted6);
-        System.out.println("Sorted array6 : ");
-        obj.printArray(unsorted6);
+//        int unsorted6[] = {64, 25, 12, 22, 11};
+//        obj.sortFunction6(unsorted6);
+//        System.out.println("Sorted array6 : ");
+//        obj.printArray(unsorted6);
 
     }
 
