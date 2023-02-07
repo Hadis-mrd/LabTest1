@@ -1,76 +1,62 @@
-package labtest1;
-
 /**
- * @author Sofia Rimando
- * @since 07-02-2023
+ * @author Tony Tran
+ * @param int
+ * @return void
+ * 
  */
+
+package labtest1;
 import java.util.Arrays;
 
 public class LabTest1 {
-    
-    /** 
-     * Sorts array from least to greatest values
-     * @param unsorted[]
-     */
     void sortFunction4(int unsorted[])
     {
-        int index = 0;
+        int index = 1;
         int n = unsorted.length;
-        while (index < n) {                                     // Change to correct index
-            if (index == 0)
-                index++; 
-            if (unsorted[index - 1] < unsorted[index])          // Change to sort from lowest to highest value 
-                index++;
-            else {
-                int temp = 0;
-                temp = unsorted[index];
+        while (index < n) {
+            if(index == 0) index++;
+            if (unsorted[index - 1] >= unsorted[index]){//if the first > second
+                int temp = unsorted[index]; //swap
                 unsorted[index] = unsorted[index - 1];
                 unsorted[index - 1] = temp;
                 index--;
+            } 
+            else { //else second is greater than first
+                index++;
             }
         }
     }
  
-    
-    /** 
-     * Sorts array from least to greatest values
-     * @param unsorted[]
-     */
     void sortFunction5(int unsorted[]) 
     {
-        int n = unsorted.length;
+        int n = unsorted.length ; 
         int min = unsorted[0];
-        int max = unsorted[n - 1];                              // Change to correct index
+        int max = unsorted[n- 1]; //minus one to correct for zero indexing. for indexing
         int range, i, j, index;
  
         for(int a=0; a<n; a++)
         {
-            if(unsorted[a] > max)                               // Change to 'greater than' max
-                max = unsorted[a];
-            if(unsorted[a] < min)                               // Change to 'less than' min
+            if( max <unsorted[a] ) 
+                max = unsorted[a]; 
+            if( min > unsorted[a]) 
                 min = unsorted[a];
         }
- 
+
         range = max - min + 1;
         int[] phole = new int[range];
         Arrays.fill(phole, 0);
  
         for(i = 0; i<n; i++)
             phole[unsorted[i] - min]++;
-  
          
         index = 0;
  
         for(j = 0; j<range; j++)
             while(phole[j]-->0)
                 unsorted[index++]=j+min;
+                
     }
      
-    
-    /** 
-     * Sorts array from least to greatest values
-     * @param unsorted[]
-     */
     void sortFunction6(int unsorted[]) 
     {
         boolean isSorted = false;
@@ -82,7 +68,7 @@ public class LabTest1 {
  
             for (int i=1; i<=n-2; i=i+2)
             {
-                if (unsorted[i + 1] < unsorted[i])              // Change to 'less than'
+                if (unsorted[i + 1] < unsorted[i]) //if the first is greater than first
                 {
                     temp = unsorted[i];
                     unsorted[i] = unsorted[i+1];
@@ -104,10 +90,6 @@ public class LabTest1 {
         }
     }
      
-    
-    /** 
-     * @param arr[]
-     */
     void printArray(int arr[])
     {
         int n = arr.length;
@@ -117,10 +99,6 @@ public class LabTest1 {
     }
  
     
-    
-    /** 
-     * @param args
-     */
     public static void main(String[] args) {
         LabTest1 obj = new LabTest1();
         
