@@ -2,7 +2,11 @@ package labtest1;
 import java.util.Arrays;
 
 public class LabTest1 {
+    /**
+    * @param unsorted an array to store unsorted values
+    */
     public void sortFunction4(int unsorted[])
+
     {
         int index = 0;
         int n = unsorted.length;
@@ -20,7 +24,9 @@ public class LabTest1 {
             }
         }
     }
- 
+    /**
+    * @param unsorted an array to store unsorted values
+    */
     public void sortFunction5(int unsorted[]) 
     {
         int n = unsorted.length;
@@ -50,7 +56,9 @@ public class LabTest1 {
             while(phole[j]-->0)
                 unsorted[index++]=j+min;
     }
-     
+    /**
+    * @param unsorted an array to store unsorted values
+    */
     public void sortFunction6(int unsorted[]) 
     {
         boolean isSorted = false;
@@ -83,7 +91,9 @@ public class LabTest1 {
             }
         }
     }
-     
+    /**
+    * @param arr an array to store the sorted values
+    */
     public void printArray(int arr[])
     {
         int n = arr.length;
