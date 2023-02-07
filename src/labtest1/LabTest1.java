@@ -1,12 +1,22 @@
-package labtest1;
+package LabTest1.src.labtest1;
 import java.util.Arrays;
 
+/**
+ * @author  Mani Rash Ahmadi
+ * @version 1.0
+ * @since 2023-02-07
+ */
+
 public class LabTest1 {
+    
+    /** 
+     * @param unsorted[] array which we want to sort
+     */
     void sortFunction4(int unsorted[])
     {
         int index = 0;
         int n = unsorted.length;
-        while (index <= n) { 
+        while (index < n) { 
             if (index == 0)
                 index++; 
             if (unsorted[index - 1] > unsorted[index]) 
@@ -21,19 +31,23 @@ public class LabTest1 {
         }
     }
  
+    
+    /** 
+     * @param unsorted[] array which we want to sort
+     */
     void sortFunction5(int unsorted[]) 
     {
         int n = unsorted.length;
         int min = unsorted[0];
-        int max = unsorted[n];
+        int max = unsorted[n-1];
         int range, i, j, index;
  
         for(int a=0; a<n; a++)
         {
-            if(unsorted[a] < max) 
-                max = unsorted[a];
-            if(unsorted[a] > min) 
+            if(unsorted[a] < min) 
                 min = unsorted[a];
+            if(unsorted[a] > max) 
+                max = unsorted[a];
         }
  
         range = max - min + 1;
@@ -51,6 +65,10 @@ public class LabTest1 {
                 unsorted[index++]=j+min;
     }
      
+    
+    /** 
+     * @param unsorted[] array which we want to sort
+     */
     void sortFunction6(int unsorted[]) 
     {
         boolean isSorted = false;
@@ -73,7 +91,7 @@ public class LabTest1 {
  
             for (int i=0; i<=n-2; i=i+2)
             {
-                if (unsorted[i] > unsorted[i+1])
+                if (unsorted[i + 1] > unsorted[i])
                 {
                     temp = unsorted[i];
                     unsorted[i] = unsorted[i+1];
@@ -84,6 +102,10 @@ public class LabTest1 {
         }
     }
      
+    
+    /** 
+     * @param arr[]
+     */
     void printArray(int arr[])
     {
         int n = arr.length;
@@ -93,6 +115,10 @@ public class LabTest1 {
     }
  
     
+    
+    /** 
+     * @param args
+     */
     public static void main(String[] args) {
         LabTest1 obj = new LabTest1();
         
