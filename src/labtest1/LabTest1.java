@@ -2,7 +2,7 @@ package labtest1;
 import java.util.Arrays;
 
 public class LabTest1 {
-    void sortFunction4(int unsorted[])
+    public void sortFunction4(int unsorted[])
     {
         int index = 0;
         int n = unsorted.length;
@@ -21,7 +21,7 @@ public class LabTest1 {
         }
     }
  
-    void sortFunction5(int unsorted[]) 
+    public void sortFunction5(int unsorted[]) 
     {
         int n = unsorted.length;
         int min = unsorted[0];
@@ -51,14 +51,14 @@ public class LabTest1 {
                 unsorted[index++]=j+min;
     }
      
-    void sortFunction6(int unsorted[]) 
+    public void sortFunction6(int unsorted[]) 
     {
         boolean isSorted = false;
         int n = unsorted.length;
         while (!isSorted)
         {
             isSorted = true;
-            int temp =0;
+            int temp =0;    
  
             for (int i=1; i<=n-2; i=i+2)
             {
@@ -84,7 +84,7 @@ public class LabTest1 {
         }
     }
      
-    void printArray(int arr[])
+    public void printArray(int arr[])
     {
         int n = arr.length;
         for (int i=0; i<n; ++i)
