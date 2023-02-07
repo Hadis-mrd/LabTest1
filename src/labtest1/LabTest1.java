@@ -1,15 +1,21 @@
 package labtest1;
 import java.util.Arrays;
 
+//@author Akhilesh Ganapathyraju
+
 public class LabTest1 {
     void sortFunction4(int unsorted[])
     {
+        /** 
+         * Function generates the array output in ascending order.
+         */
         int index = 0;
         int n = unsorted.length;
-        while (index <= n) { 
+        while (index <= n-1) { //error was the fact that n was out of bounds,
+            //so n - 1 makes it inbounds
             if (index == 0)
                 index++; 
-            if (unsorted[index - 1] > unsorted[index]) 
+            if (unsorted[index - 1] < unsorted[index]) //flipped > sign to < to make it ascending
                 index++;
             else {
                 int temp = 0;
@@ -23,16 +29,19 @@ public class LabTest1 {
  
     void sortFunction5(int unsorted[]) 
     {
+        /** 
+         * Function generates the array output in ascending order.
+         */
         int n = unsorted.length;
         int min = unsorted[0];
-        int max = unsorted[n];
+        int max = unsorted[n-1]; // error was again n being out of bounds, being fixed by n-1
         int range, i, j, index;
  
-        for(int a=0; a<n; a++)
+        for(int a=0; a < n; a++) //a has to be less than or equal to n otherwise last element is neglected
         {
-            if(unsorted[a] < max) 
+            if(unsorted[a] > max) 
                 max = unsorted[a];
-            if(unsorted[a] > min) 
+            if(unsorted[a] < min) 
                 min = unsorted[a];
         }
  
@@ -53,16 +62,19 @@ public class LabTest1 {
      
     void sortFunction6(int unsorted[]) 
     {
+        /** 
+         * Function generates the array output in ascending order.
+         */
         boolean isSorted = false;
         int n = unsorted.length;
         while (!isSorted)
         {
             isSorted = true;
-            int temp =0;
+            int temp; // removed zero
  
             for (int i=1; i<=n-2; i=i+2)
             {
-                if (unsorted[i + 1] > unsorted[i]) 
+                if (unsorted[i+ 1] < unsorted[i]) //flipped > sign to <
                 {
                     temp = unsorted[i];
                     unsorted[i] = unsorted[i+1];
@@ -86,6 +98,9 @@ public class LabTest1 {
      
     void printArray(int arr[])
     {
+        /** 
+         * Method prints array in proper order.
+         */
         int n = arr.length;
         for (int i=0; i<n; ++i)
             System.out.print(arr[i]+" ");
@@ -94,6 +109,10 @@ public class LabTest1 {
  
     
     public static void main(String[] args) {
+        /** 
+         * Main method calls LabTest1 Class and calls it obj
+         * uses all three sortFunctions and sorts the same array
+         */
         LabTest1 obj = new LabTest1();
         
         int unsorted4[] = {64,25,12,22,11};
