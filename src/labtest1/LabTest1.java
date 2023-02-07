@@ -1,7 +1,10 @@
 /**
  * The LabTest1 class implements sorting algorithms.
  * The class contains methods that sort an integer array using different algorithms.
+ *@author Ahsan Siddiqi
+ * @version 2.0
  */
+
 package labtest1;
 import java.util.Arrays;
 
