@@ -8,7 +8,7 @@ public class LabTest1 {
         while (index < length) { 
             if (index == 0)
                 index++; 
-            if (unsorted[index - 1] > unsorted[index]) 
+            if (unsorted[index - 1] < unsorted[index])     
                 index++;
             else {
                 int temp = 0;
@@ -19,6 +19,7 @@ public class LabTest1 {
             }
         }
     }
+
 void sortFunction5(int unsorted[]) 
 {
     int length = unsorted.length;
