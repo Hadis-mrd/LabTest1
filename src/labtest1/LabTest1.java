@@ -1,7 +1,7 @@
 /**
  * The LabTest1 class implements sorting algorithms.
  * The class contains methods that sort an integer array using different algorithms.
- *@author Ahsan Siddiqi
+ * @author Ahsan Siddiqi
  * @version 2.0
  */
 
@@ -12,6 +12,7 @@ public class LabTest1 {
 
     /**
      * sortFunction4 method sorts an integer array using Insertion Sort Algorithm.
+     * 
      * @param unsorted an integer array to be sorted.
      */
     void sortFunction4(int unsorted[]) {
@@ -35,6 +36,7 @@ public class LabTest1 {
 
     /**
      * sortFunction5 method sorts an integer array using Counting Sort Algorithm.
+     * 
      * @param unsorted an integer array to be sorted.
      */
     void sortFunction5(int unsorted[]) {
@@ -66,6 +68,7 @@ public class LabTest1 {
 
     /**
      * sortFunction6 method sorts an integer array using Bubble Sort Algorithm.
+     * 
      * @param unsorted an integer array to be sorted.
      */
     void sortFunction6(int unsorted[]) {
@@ -88,6 +91,7 @@ public class LabTest1 {
 
     /**
      * printArray method prints an integer array.
+     * 
      * @param arr an integer array to be printed.
      */
     void printArray(int arr[])
@@ -98,6 +102,11 @@ public class LabTest1 {
         System.out.println();
     }
  
+    /**
+     * The main method that uses the `LabTest1` class to sort arrays using three different sorting algorithms.
+     *
+     * @param args command line arguments
+     */
     
     public static void main(String[] args) {
         LabTest1 obj = new LabTest1();
