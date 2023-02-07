@@ -16,10 +16,10 @@ public class LabTest1 {
     {
         int index = 0;
         int n = unsorted.length;
-        while (index < n) { 
+        while (index < n) {  //this line was causing the out-of-bounds error
             if (index == 0)
                 index++; 
-            if (unsorted[index - 1] > unsorted[index]) 
+            if (unsorted[index - 1] < unsorted[index]) //changing this line puts the array in ascending
                 index++;
             else {
                 int temp = 0;
@@ -80,7 +80,7 @@ public class LabTest1 {
  
             for (int i=1; i<=n-2; i=i+2)
             {
-                if (unsorted[i + 1] > unsorted[i]) 
+                if (unsorted[i + 1] < unsorted[i]) //changing this and line 94 puts array in ascending
                 {
                     temp = unsorted[i];
                     unsorted[i] = unsorted[i+1];
@@ -91,7 +91,7 @@ public class LabTest1 {
  
             for (int i=0; i<=n-2; i=i+2)
             {
-                if (unsorted[i + 1] > unsorted[i])
+                if (unsorted[i + 1] < unsorted[i]) //changing this and 83 puts array in ascending
                 {
                     temp = unsorted[i];
                     unsorted[i] = unsorted[i+1];
