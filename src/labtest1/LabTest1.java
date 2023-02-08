@@ -1,31 +1,42 @@
+/**
+ * @author Zain Siddiqui
+ * @version 2.0
+ * @since 2022-02-08
+ */
+
 package labtest1;
 
 public class LabTest1 {
-	
+ /**
+ * @param args use to sort input numbers using different methods.
+ * 
+ */
     void sortFunction7(int unsorted[]) 
     {
         int len = unsorted.length;
-        for (int i = 0; i <= len; i++) 
+        for (int i = 0; i < len; i++) 
         { 
             int index = i;
-            for (int j = i+1; j < len-1; j++) 
+            for (int j = i+1; j < len; j++)//removed -1
+            
                 if (unsorted[j] < unsorted[index])
                     index = j;
-            int t = unsorted[index];
-            unsorted[index] = unsorted[i];
-            unsorted[i] = t;
+                    int t = unsorted[index];
+                    unsorted[index] = unsorted[i];
+                    unsorted[i] = t;
+            
         }
     }
  
     void sortFunction8(int unsorted[]) 
     {
         int ln = unsorted.length;
-        for (int i = 1; i < ln; ++i) {
+        for (int i = 0; i < ln; i++) {//look
             int item = unsorted[i];
-            int j = i + 1; 
+            int j = i - 1; 
             
-            while (j > 0 && unsorted[j] > item) { 
-                unsorted[j + 1] = unsorted[j];
+            while (j >= 0 && unsorted[j] > item) { //changed signs in the while loop
+                unsorted[j + 1] = unsorted[j];//chamged sin
                 j = j - 1;
             }
             unsorted[j + 1] = item;
@@ -36,12 +47,14 @@ public class LabTest1 {
     {
         int index = 0;
         int n = unsorted.length;
-        while (index <= n) { 
-            if (index == 0)
-                index++; 
-            if (unsorted[index-1] > unsorted[index])
+        while (index < n) { 
+            if (index == 0){
                 index++;
-            else {
+            }
+            if (unsorted[index-1] < unsorted[index])// flipped the sign
+            {
+                index++;  
+            } else {
                 int temp = unsorted[index];
                 unsorted[index] = unsorted[index - 1];
                 unsorted[index - 1] = temp;
@@ -53,8 +66,10 @@ public class LabTest1 {
     void printArray(int arr[])
     {
         int n = arr.length;
-        for (int i=0; i<n; ++i)
+        for (int i=0; i<n; i++)
+        {
             System.out.print(arr[i]+" ");
+        }
         System.out.println();
     }
  
