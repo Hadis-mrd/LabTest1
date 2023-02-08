@@ -1,14 +1,21 @@
+/**
+ * @author ecyrdavi (Evan Cyr-David)
+ * @version 1.0
+ * This program sorts through an array in increasing order using three different methods
+ * 
+ */
+
 package labtest1;
 
 public class LabTest1 {
-	
+    
     void sortFunction7(int unsorted[]) 
     {
-        int len = unsorted.length;
-        for (int i = 0; i <= len; i++) 
+        int len = unsorted.length; //int unsorted7[] = {74,25,13,22,8};
+        for (int i = 0; i < len - 1; i++) //changed <= to <, changed to len -1
         { 
             int index = i;
-            for (int j = i+1; j < len-1; j++) 
+            for (int j = i+1; j < len; j++) // instead of len - 1 substitute for just len
                 if (unsorted[j] < unsorted[index])
                     index = j;
             int t = unsorted[index];
@@ -16,30 +23,31 @@ public class LabTest1 {
             unsorted[i] = t;
         }
     }
- 
+    
     void sortFunction8(int unsorted[]) 
     {
         int ln = unsorted.length;
-        for (int i = 1; i < ln; ++i) {
+        for (int i = 1; i < ln; ++i) { //change i++ to ++i
             int item = unsorted[i];
-            int j = i + 1; 
+            int j = i - 1; //change from i + 1 to i - 1
             
-            while (j > 0 && unsorted[j] > item) { 
+            while (j >= 0 && unsorted[j] >= item) { //change to >=
                 unsorted[j + 1] = unsorted[j];
                 j = j - 1;
             }
             unsorted[j + 1] = item;
         }
     }
+
     
     void sortFunction9(int unsorted[])
     {
         int index = 0;
         int n = unsorted.length;
-        while (index <= n) { 
+        while (index < n) { //change to < instead of <= beacuse then it would be out of bounds 
             if (index == 0)
                 index++; 
-            if (unsorted[index-1] > unsorted[index])
+            if (unsorted[index-1] < unsorted[index]) //swap the sign
                 index++;
             else {
                 int temp = unsorted[index];
@@ -49,7 +57,7 @@ public class LabTest1 {
             }
         }
     }
-    
+
     void printArray(int arr[])
     {
         int n = arr.length;
@@ -58,7 +66,7 @@ public class LabTest1 {
         System.out.println();
     }
  
-    
+
     public static void main(String[] args) {
         LabTest1 obj = new LabTest1();
         
