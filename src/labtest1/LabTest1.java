@@ -14,7 +14,7 @@ public class LabTest1 {
     void sortFunction7(int unsorted[]) 
     {
         int len = unsorted.length;
-        for (int i = 0; i < len; i++) 
+        for (int i = 0; i < len; i++)// removed <=
         { 
             int index = i;
             for (int j = i+1; j < len; j++)//removed -1
@@ -33,9 +33,9 @@ public class LabTest1 {
         int ln = unsorted.length;
         for (int i = 0; i < ln; i++) {//look
             int item = unsorted[i];
-            int j = i - 1; 
+            int j = i - 1; //chaged to minus
             
-            while (j >= 0 && unsorted[j] > item) { //changed signs in the while loop
+            while (j >= 0 && unsorted[j] > item) {//changed to j greater and equal to
                 unsorted[j + 1] = unsorted[j];//chamged sin
                 j = j - 1;
             }
@@ -47,14 +47,18 @@ public class LabTest1 {
     {
         int index = 0;
         int n = unsorted.length;
-        while (index < n) { 
-            if (index == 0){
+        while (index < n)//removed equals
+        { 
+            if (index == 0)//added curly brackets
+            {
                 index++;
             }
             if (unsorted[index-1] < unsorted[index])// flipped the sign
             {
                 index++;  
-            } else {
+            } 
+            else 
+            {
                 int temp = unsorted[index];
                 unsorted[index] = unsorted[index - 1];
                 unsorted[index - 1] = temp;
