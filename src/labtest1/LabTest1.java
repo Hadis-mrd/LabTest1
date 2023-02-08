@@ -1,14 +1,20 @@
+/**
+ * This program sorts an array of numbers least to greatest using 3 different methods
+ * @author Maximilian Gerbec
+ * @version 1.0
+ */
+
 package labtest1;
 
 public class LabTest1 {
-	
+    
     void sortFunction7(int unsorted[]) 
     {
         int len = unsorted.length;
-        for (int i = 0; i <= len; i++) 
+        for (int i = 0; i < len-1; i++) // < len-1 instead of len
         { 
             int index = i;
-            for (int j = i+1; j < len-1; j++) 
+            for (int j = i+1; j < len; j++) //len instead of len-1
                 if (unsorted[j] < unsorted[index])
                     index = j;
             int t = unsorted[index];
@@ -22,24 +28,29 @@ public class LabTest1 {
         int ln = unsorted.length;
         for (int i = 1; i < ln; ++i) {
             int item = unsorted[i];
-            int j = i + 1; 
+            int j = i - 1; 
             
-            while (j > 0 && unsorted[j] > item) { 
+       
+            while (j >= 0 && unsorted[j] > item) { //>= instead of >
                 unsorted[j + 1] = unsorted[j];
                 j = j - 1;
             }
+            
+        
             unsorted[j + 1] = item;
-        }
+            }
+           
+        
     }
     
     void sortFunction9(int unsorted[])
     {
         int index = 0;
         int n = unsorted.length;
-        while (index <= n) { 
+        while (index < n) { //< instead of <= (out of bounds)
             if (index == 0)
                 index++; 
-            if (unsorted[index-1] > unsorted[index])
+            if (unsorted[index-1] < unsorted[index]) //< instead of > (sort least to greatest)
                 index++;
             else {
                 int temp = unsorted[index];
@@ -58,7 +69,6 @@ public class LabTest1 {
         System.out.println();
     }
  
-    
     public static void main(String[] args) {
         LabTest1 obj = new LabTest1();
         
