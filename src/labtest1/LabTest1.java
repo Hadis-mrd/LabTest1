@@ -1,14 +1,31 @@
+
+
+
 package labtest1;
 
+import java.util.*;
+
+/**
+ * This program utilizes and shows off three different sorting methods
+ * Each function shows off a different sorting method
+ * @author Nicholas Grigg
+ * @version 2.0
+ */
+
+
 public class LabTest1 {
-	
-    void sortFunction7(int unsorted[]) 
+	/**
+         * SortFunction7 takes an array of items and sorts them smallest to largest
+         * 
+         * @param unsorted array of items
+         */
+    public void sortFunction7(int unsorted[]) // made public to allow javadoc to properly be formatted
     {
         int len = unsorted.length;
-        for (int i = 0; i <= len; i++) 
+        for (int i = 0; i < len; i++) // changed from <= to 
         { 
             int index = i;
-            for (int j = i+1; j < len-1; j++) 
+            for (int j = i+1; j <= len-1; j++)  // changed from < to <=
                 if (unsorted[j] < unsorted[index])
                     index = j;
             int t = unsorted[index];
@@ -17,14 +34,19 @@ public class LabTest1 {
         }
     }
  
-    void sortFunction8(int unsorted[]) 
+        /**
+         * SortFunction8 takes an array of items and sorts them smallest to largest
+         * 
+         * @param unsorted array of items
+         */
+    public void sortFunction8(int unsorted[]) 
     {
         int ln = unsorted.length;
         for (int i = 1; i < ln; ++i) {
             int item = unsorted[i];
-            int j = i + 1; 
+            int j = i - 1; //changed to - instead of +
             
-            while (j > 0 && unsorted[j] > item) { 
+            while (j >= 0 && unsorted[j] > item) { // changed to > instead of >=
                 unsorted[j + 1] = unsorted[j];
                 j = j - 1;
             }
@@ -32,14 +54,19 @@ public class LabTest1 {
         }
     }
     
-    void sortFunction9(int unsorted[])
+        /**
+         * SortFunction9 takes an array of items and sorts them smallest to largest
+         * 
+         * @param unsorted array of items
+         */
+    public void sortFunction9(int unsorted[])
     {
         int index = 0;
         int n = unsorted.length;
-        while (index <= n) { 
+        while (index < n) { // got rid of =
             if (index == 0)
                 index++; 
-            if (unsorted[index-1] > unsorted[index])
+            if (unsorted[index-1] < unsorted[index]) // flipped from > to <
                 index++;
             else {
                 int temp = unsorted[index];
@@ -50,7 +77,12 @@ public class LabTest1 {
         }
     }
     
-    void printArray(int arr[])
+    /**
+     * PrintArray prints an array of items 
+     * 
+     * @param arr some array
+     */
+    public void printArray(int arr[])
     {
         int n = arr.length;
         for (int i=0; i<n; ++i)
@@ -58,7 +90,11 @@ public class LabTest1 {
         System.out.println();
     }
  
-    
+    /**
+     * The main utilizes and prints 3 different sorted arrays given an unsorted array
+     * 
+     * @param args 
+     */
     public static void main(String[] args) {
         LabTest1 obj = new LabTest1();
         
