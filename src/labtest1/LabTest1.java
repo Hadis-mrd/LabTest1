@@ -1,14 +1,23 @@
+/**
+ * @author Leo Ridout
+ * @vesrion 1.0
+ *  Programs Intended Use: Sorts arrays in ascending order using various sort functions.
+ *  Takes in a unsorted array, sorts through each index and returns the array from smallest to largest number.
+ */
+
+
 package labtest1;
 
 public class LabTest1 {
 	
+    
     void sortFunction7(int unsorted[]) 
     {
         int len = unsorted.length;
-        for (int i = 0; i <= len; i++) 
+        for (int i = 0; i < len; i++) // changed 'i<=len' to 'i<len'
         { 
             int index = i;
-            for (int j = i+1; j < len-1; j++) 
+            for (int j = i+1; j < len; j++)  // changed 'j<len-1' to 'j<len'
                 if (unsorted[j] < unsorted[index])
                     index = j;
             int t = unsorted[index];
@@ -20,11 +29,11 @@ public class LabTest1 {
     void sortFunction8(int unsorted[]) 
     {
         int ln = unsorted.length;
-        for (int i = 1; i < ln; ++i) {
+        for (int i = 1; i < ln; ++i) { 
             int item = unsorted[i];
-            int j = i + 1; 
+            int j = i - 1; // changed 'j=i+1' to 'j=i-1'
             
-            while (j > 0 && unsorted[j] > item) { 
+            while (j >= 0 && unsorted[j] > item) { //changed to 'j>=0' from 'j>0'
                 unsorted[j + 1] = unsorted[j];
                 j = j - 1;
             }
@@ -32,14 +41,20 @@ public class LabTest1 {
         }
     }
     
+    
+
+  
+    
+    
+    
     void sortFunction9(int unsorted[])
     {
         int index = 0;
         int n = unsorted.length;
-        while (index <= n) { 
+        while (index < n) { // changed 'index<=n' to 'index<n' | index shouldnt be equal to n
             if (index == 0)
                 index++; 
-            if (unsorted[index-1] > unsorted[index])
+            if (unsorted[index-1] < unsorted[index]) // changed sign to '<' from '>' to change display order
                 index++;
             else {
                 int temp = unsorted[index];
@@ -76,6 +91,8 @@ public class LabTest1 {
         obj.sortFunction9(unsorted9);
         System.out.println("Sorted array9 : ");
         obj.printArray(unsorted9);
+        
+    
        
     }
     
