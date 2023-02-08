@@ -41,7 +41,7 @@ public class LabTest1 {
         { 
             if (index == 0)
                 index++; 
-            if (unsorted[index-1] < unsorted[index])
+            if (unsorted[index-1] < unsorted[index])  //changed to less than rather than greater than
                 index++;
             else {
                 int temp = unsorted[index];
