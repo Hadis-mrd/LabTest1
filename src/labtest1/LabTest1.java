@@ -1,14 +1,26 @@
+/**
+* @author Om Patel
+* @version 1.0
+* This program sorts an unsorted array from least to greatest through three different functions
+*/
+
 package labtest1;
 
 public class LabTest1 {
+    
+    /**
+     * 
+     * @param unsorted 
+     * sorts input array from least to greatest
+     */
 	
     void sortFunction7(int unsorted[]) 
     {
         int len = unsorted.length;
-        for (int i = 0; i <= len; i++) 
+        for (int i = 0; i < len; i++) //less than len not less than and equal to len
         { 
             int index = i;
-            for (int j = i+1; j < len-1; j++) 
+            for (int j = i+1; j < len; j++) //removed -1 from len
                 if (unsorted[j] < unsorted[index])
                     index = j;
             int t = unsorted[index];
@@ -16,30 +28,42 @@ public class LabTest1 {
             unsorted[i] = t;
         }
     }
+    
+    /**
+     * 
+     * @param unsorted 
+     * sorts input array from least to greatest
+     */
  
     void sortFunction8(int unsorted[]) 
     {
         int ln = unsorted.length;
         for (int i = 1; i < ln; ++i) {
             int item = unsorted[i];
-            int j = i + 1; 
+            int j = i - 1; 
             
-            while (j > 0 && unsorted[j] > item) { 
+            while (j >= 0 && unsorted[j] > item) { //changed to j>=0
                 unsorted[j + 1] = unsorted[j];
-                j = j - 1;
+                j = j - 1; //changed + to -
             }
             unsorted[j + 1] = item;
         }
     }
     
+    /**
+     * 
+     * @param unsorted 
+     * sorts input array from least to greatest 
+     */
+    
     void sortFunction9(int unsorted[])
     {
         int index = 0;
         int n = unsorted.length;
-        while (index <= n) { 
+        while (index < n) { //took out b/c it makes it out of bounds
             if (index == 0)
                 index++; 
-            if (unsorted[index-1] > unsorted[index])
+            if (unsorted[index-1] < unsorted[index]) //made sign less than
                 index++;
             else {
                 int temp = unsorted[index];
@@ -50,6 +74,11 @@ public class LabTest1 {
         }
     }
     
+    /**
+     * 
+     * @param arr 
+     * prints all the indexes of the input array
+     */
     void printArray(int arr[])
     {
         int n = arr.length;
@@ -58,6 +87,10 @@ public class LabTest1 {
         System.out.println();
     }
  
+    /**
+     * calls all the functions for sorting the array
+     * @param args the command line arguments
+     */
     
     public static void main(String[] args) {
         LabTest1 obj = new LabTest1();
@@ -70,7 +103,8 @@ public class LabTest1 {
         int unsorted8[] = {74,25,13,22,8};
         obj.sortFunction8(unsorted8);
         System.out.println("Sorted array8 : ");
-        obj.printArray(unsorted8);
+        obj.printArray
+        (unsorted8);
         
         int unsorted9[] = {74,25,13,22,8};
         obj.sortFunction9(unsorted9);
