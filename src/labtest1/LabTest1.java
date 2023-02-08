@@ -1,55 +1,74 @@
 package labtest1;
-
+/**
+ * 
+ * @author Dania Kridli
+ * @version 1.0
+ * @since 2023-02-08
+ */
 public class LabTest1 {
+    
+    /**
+     * this is the first method
+     * @param unsorted is the array that needs to be sorted
+     */
 	
     void sortFunction7(int unsorted[]) 
     {
         int len = unsorted.length;
-        for (int i = 0; i <= len; i++) 
+        for (int i = 0; i < len; i++) //changed <= to <
         { 
             int index = i;
-            for (int j = i+1; j < len-1; j++) 
-                if (unsorted[j] < unsorted[index])
+            for (int j = i+1; j <= len-1; j++) 
+                if (unsorted[j] < unsorted[index]) 
                     index = j;
             int t = unsorted[index];
             unsorted[index] = unsorted[i];
             unsorted[i] = t;
         }
     }
- 
+ /**
+  * this is the second method
+  * @param unsorted is the array that needs to be sorted
+  */
     void sortFunction8(int unsorted[]) 
     {
         int ln = unsorted.length;
         for (int i = 1; i < ln; ++i) {
             int item = unsorted[i];
-            int j = i + 1; 
+            int j = i - 1; //switched + to -
             
-            while (j > 0 && unsorted[j] > item) { 
+            while (j >= 0 && unsorted[j] > item) { //switch j > 0 && unsorted[j] > item to j >= 0 && unsorted[j] > item
                 unsorted[j + 1] = unsorted[j];
                 j = j - 1;
             }
             unsorted[j + 1] = item;
         }
     }
-    
+    /**
+     * this is the third method
+     * @param unsorted is the array that needs to be sorted
+     */
     void sortFunction9(int unsorted[])
     {
         int index = 0;
         int n = unsorted.length;
-        while (index <= n) { 
+        while (index < n) { //switched <= to <
             if (index == 0)
                 index++; 
-            if (unsorted[index-1] > unsorted[index])
+            if (unsorted[index-1] <= unsorted[index]) //switch from > to <=
                 index++;
             else {
                 int temp = unsorted[index];
                 unsorted[index] = unsorted[index - 1];
                 unsorted[index - 1] = temp;
-                index--;
+                index--; 
             }
         }
     }
-    
+    /**
+     * 
+     * @param arr is the array that needs to be printed
+     */
     void printArray(int arr[])
     {
         int n = arr.length;
@@ -57,7 +76,11 @@ public class LabTest1 {
             System.out.print(arr[i]+" ");
         System.out.println();
     }
- 
+    
+    /**
+     * 
+     * @param args not used
+     */
     
     public static void main(String[] args) {
         LabTest1 obj = new LabTest1();
