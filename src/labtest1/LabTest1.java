@@ -1,14 +1,20 @@
 package labtest1;
+//generating Javadoc
+/**
+ * Lab Test 1
+ * @author moosa
+ * {@code}
+ */
 
 public class LabTest1 {
 	
     void sortFunction7(int unsorted[]) 
     {
         int len = unsorted.length;
-        for (int i = 0; i <= len; i++) 
+        for (int i = 0; i < len; i++) // i <= len changed
         { 
             int index = i;
-            for (int j = i+1; j < len-1; j++) 
+            for (int j = i+1; j < len; j++) // j < len-1 changed
                 if (unsorted[j] < unsorted[index])
                     index = j;
             int t = unsorted[index];
@@ -17,18 +23,18 @@ public class LabTest1 {
         }
     }
  
-    void sortFunction8(int unsorted[]) 
+    void sortFunction8(int unsorted[]) // couldn't fix this code properly
     {
         int ln = unsorted.length;
-        for (int i = 1; i < ln; ++i) {
+        for (int i = 0; i < ln; i++) { // i = 1 was changed
             int item = unsorted[i];
             int j = i + 1; 
             
-            while (j > 0 && unsorted[j] > item) { 
+            while (j < 4 && unsorted[j] < item) { // j > 0 was changed
                 unsorted[j + 1] = unsorted[j];
-                j = j - 1;
+                j = j + 1; // j - 1 was changed
             }
-            unsorted[j + 1] = item;
+            unsorted[j - 1] = item; // j + 1 was changed
         }
     }
     
@@ -36,10 +42,10 @@ public class LabTest1 {
     {
         int index = 0;
         int n = unsorted.length;
-        while (index <= n) { 
+        while (index < n) { // index <= n changed
             if (index == 0)
                 index++; 
-            if (unsorted[index-1] > unsorted[index])
+            if (unsorted[index-1] < unsorted[index]) // unsorted[index-1] < unsorted[index] changed
                 index++;
             else {
                 int temp = unsorted[index];
