@@ -1,14 +1,16 @@
 package labtest1;
-
+/*
+ * @author chiragmelvanki
+ */
 public class LabTest1 {
 	
     void sortFunction7(int unsorted[]) 
     {
         int len = unsorted.length;
-        for (int i = 0; i <= len; i++) 
+        for (int i = 0; i < len; i++) //removed '=' sign from '<' sign [runtime error]
         { 
             int index = i;
-            for (int j = i+1; j < len-1; j++) 
+            for (int j = i+1; j < len; j++) //removed "-1" from "len" [logic error]
                 if (unsorted[j] < unsorted[index])
                     index = j;
             int t = unsorted[index];
@@ -22,9 +24,9 @@ public class LabTest1 {
         int ln = unsorted.length;
         for (int i = 1; i < ln; ++i) {
             int item = unsorted[i];
-            int j = i + 1; 
+            int j = i - 1; //changed '+' sign to '-' sign [runtime error]
             
-            while (j > 0 && unsorted[j] > item) { 
+            while (j >= 0 && unsorted[j] > item) { //added '=' sign to '>' sign [logic error]
                 unsorted[j + 1] = unsorted[j];
                 j = j - 1;
             }
@@ -36,10 +38,10 @@ public class LabTest1 {
     {
         int index = 0;
         int n = unsorted.length;
-        while (index <= n) { 
+        while (index < n) { //removed '=' sign from '<' sign [runtime error]
             if (index == 0)
                 index++; 
-            if (unsorted[index-1] > unsorted[index])
+            if (unsorted[index-1] < unsorted[index]) //changed '>' sign to '<' sign [logic error]
                 index++;
             else {
                 int temp = unsorted[index];
