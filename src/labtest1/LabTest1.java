@@ -5,10 +5,10 @@ public class LabTest1 {
     void sortFunction7(int unsorted[]) 
     {
         int len = unsorted.length;
-        for (int i = 0; i <= len; i++) 
+        for (int i = 0; i <= len - 1; i++)
         { 
             int index = i;
-            for (int j = i+1; j < len-1; j++) 
+            for (int j = i + 1; j < len; j++)  //removed minus sign for loop to account properly
                 if (unsorted[j] < unsorted[index])
                     index = j;
             int t = unsorted[index];
@@ -22,9 +22,10 @@ public class LabTest1 {
         int ln = unsorted.length;
         for (int i = 1; i < ln; ++i) {
             int item = unsorted[i];
-            int j = i + 1; 
+            int j = i - 1; //changed + sign to subtraction sign in order to account properly
             
-            while (j > 0 && unsorted[j] > item) { 
+            while (j >= 0 && unsorted[j] > item) //added equal sign to account for loop members
+            { 
                 unsorted[j + 1] = unsorted[j];
                 j = j - 1;
             }
@@ -36,7 +37,8 @@ public class LabTest1 {
     {
         int index = 0;
         int n = unsorted.length;
-        while (index <= n) { 
+        while (index < n) //removed equal sign
+        { 
             if (index == 0)
                 index++; 
             if (unsorted[index-1] > unsorted[index])
