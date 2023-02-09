@@ -20,13 +20,13 @@ public class LabTest1 {
     void sortFunction8(int unsorted[]) 
     {
         int ln = unsorted.length;
-        for (int i = 0; i < ln; i++) {
+        for (int i = 1; i < ln; ++i) {
             int item = unsorted[i];
             int j = i + 1; 
             
-            if (j < ln && unsorted[j] > item) { 
-            item = unsorted[j];    
-            unsorted[j] = unsorted[i];
+            while (j < ln && unsorted[j] > item) {
+                item = unsorted[j];
+                unsorted[j] = unsorted[i];
             }
             unsorted[i] = item;
         }
@@ -76,7 +76,7 @@ public class LabTest1 {
         obj.sortFunction9(unsorted9);
         System.out.println("Sorted array9 : ");
         obj.printArray(unsorted9);
-        
+       
     }
     
 }
