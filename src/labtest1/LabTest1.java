@@ -1,14 +1,19 @@
 package labtest1;
-
+/**
+ * 
+ * @author Riley Johnson
+ */
 public class LabTest1 {
-	
+    /**
+     * @param unsorted passes a specific array to the method to sort it
+     */
     void sortFunction7(int unsorted[]) 
     {
         int len = unsorted.length;
-        for (int i = 0; i <= len; i++) 
+        for (int i = 0; i < len; i++) // removed = 
         { 
             int index = i;
-            for (int j = i+1; j < len-1; j++) 
+            for (int j = i+1; j < len; j++) // removed - 1
                 if (unsorted[j] < unsorted[index])
                     index = j;
             int t = unsorted[index];
@@ -16,30 +21,34 @@ public class LabTest1 {
             unsorted[i] = t;
         }
     }
- 
+    /**
+     * @param unsorted passes a specific array to the method to sort it
+     */
     void sortFunction8(int unsorted[]) 
     {
         int ln = unsorted.length;
-        for (int i = 1; i < ln; ++i) {
+        for (int i = 1; i < ln; i++) { // ++i changed to i++
             int item = unsorted[i];
-            int j = i + 1; 
+            int j = i; // removed +1
             
-            while (j > 0 && unsorted[j] > item) { 
-                unsorted[j + 1] = unsorted[j];
+            while (j > 0 && unsorted[j - 1] > item) { // added -1
+                unsorted[j] = unsorted[j - 1]; // removed + 1 and added - 1
                 j = j - 1;
             }
-            unsorted[j + 1] = item;
+            unsorted[j] = item; // removed + 1
         }
     }
-    
+    /**
+     * @param unsorted passes a specific array to the method to sort it
+     */
     void sortFunction9(int unsorted[])
     {
         int index = 0;
         int n = unsorted.length;
-        while (index <= n) { 
+        while (index < n) { // removed =
             if (index == 0)
                 index++; 
-            if (unsorted[index-1] > unsorted[index])
+            if (unsorted[index-1] <= unsorted[index]) // replaced > with <=
                 index++;
             else {
                 int temp = unsorted[index];
