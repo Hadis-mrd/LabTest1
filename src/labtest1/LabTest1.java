@@ -1,8 +1,18 @@
 package labtest1;
-
+/**
+ * 
+ * @author Javier Lazo-Arevalo
+ * @version 2.0
+ * @since 2023-09-02
+ * 
+ */
 public class LabTest1 {
 	
     void sortFunction7(int unsorted[]) 
+            /**
+             * @see function below
+             * the function below was fixed and tested
+             */
     {
         int len = unsorted.length;
         for (int i = 0; i < len; i++)   //removed = from i<=len to fix error
@@ -18,6 +28,10 @@ public class LabTest1 {
     }
  
     void sortFunction8(int unsorted[]) 
+            /**
+             * @see function below
+             * the function below was fixed and tested
+             */
     {
         int ln = unsorted.length;
         for (int i = 0; i < ln; i++) {  //changed 1 in i=1 to 0 and ++i to i++
@@ -33,6 +47,10 @@ public class LabTest1 {
     }
     
     void sortFunction9(int unsorted[])
+            /**
+             * @see function below
+             * the function below was fixed and tested
+             */
     {
         int index = 0;
         int n = unsorted.length;
@@ -51,6 +69,10 @@ public class LabTest1 {
     }
     
     void printArray(int arr[])
+            /**
+             * @see function below
+             * the function below is designed to print out the array
+             */
     {
         int n = arr.length;
         for (int i=0; i<n; ++i)
