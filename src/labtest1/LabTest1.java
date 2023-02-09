@@ -1,8 +1,18 @@
 package labtest1;
-
+/**
+*
+*
+*@author Kevin Paknia
+*@version 2.01
+*@since 2023-02-09
+*/
 public class LabTest1 {
 	
     void sortFunction7(int unsorted[]) 
+            /**
+             * Fixed the errors with the select sort method
+             * 
+             */
     {
         int len = unsorted.length;
         for (int i = 0; i < len; i++) // changed <= with <
@@ -20,7 +30,12 @@ public class LabTest1 {
     }
  
     void sortFunction8(int unsorted[]) 
+             /**
+             *  fixed the bugs with the insert sort method
+             * 
+             */
 {
+    
     int ln = unsorted.length;
     for (int i = 0; i < ln; i++) { // made i = 0 and changed ++i to i++
         int item = unsorted[i];
@@ -34,6 +49,10 @@ public class LabTest1 {
     }
 }
     void sortFunction9(int unsorted[])
+             /**
+             * fixed errors with the buble sort method
+             * 
+             */
     {
         int index = 0;
         int n = unsorted.length;
@@ -52,6 +71,10 @@ public class LabTest1 {
     }
     
     void printArray(int arr[])
+             /**
+             * 
+             * 
+             */ 
     {
         int n = arr.length;
         for (int i=0; i<n; ++i)
