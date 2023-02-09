@@ -1,14 +1,22 @@
+/**
+ * @author jmitch19
+ * @author 1229070
+ */
+
 package labtest1;
 
 public class LabTest1 {
-	
+/**
+ * 
+ * @param unsorted passes an array to the method to sort
+ */	
     void sortFunction7(int unsorted[]) 
     {
         int len = unsorted.length;
-        for (int i = 0; i <= len; i++) 
+        for (int i = 0; i < len; i++) //changed "<=" to "<"
         { 
             int index = i;
-            for (int j = i+1; j < len-1; j++) 
+            for (int j = i+1; j < len; j++) //changed len - 1 to len
                 if (unsorted[j] < unsorted[index])
                     index = j;
             int t = unsorted[index];
@@ -16,30 +24,36 @@ public class LabTest1 {
             unsorted[i] = t;
         }
     }
- 
+ /**
+  * 
+  * @param unsorted passes an array to the method to sort
+  */
     void sortFunction8(int unsorted[]) 
     {
         int ln = unsorted.length;
-        for (int i = 1; i < ln; ++i) {
+        for (int i = 1; i < ln; i++) { //changed "++i" to "i++"
             int item = unsorted[i];
-            int j = i + 1; 
+            int j = i; //changed "j=i+1" to "j=i" 
             
-            while (j > 0 && unsorted[j] > item) { 
-                unsorted[j + 1] = unsorted[j];
+            while (j > 0 && unsorted[j -1] > item) { //changed "unsorted[j]" to "unsorted[j-]
+                unsorted[j] = unsorted[j -1]; // changed the first "[j+1]" to "[j]" and changed second from "[j]" to "[j-1]"
                 j = j - 1;
             }
-            unsorted[j + 1] = item;
+            unsorted[j] = item; //changed "[j+1]" to "[j]"
         }
     }
-    
+    /**
+     * 
+     * @param unsorted passes an array to the method to sort
+     */
     void sortFunction9(int unsorted[])
     {
         int index = 0;
         int n = unsorted.length;
-        while (index <= n) { 
+        while (index < n) { //changed "<=" to "<"
             if (index == 0)
                 index++; 
-            if (unsorted[index-1] > unsorted[index])
+            if (unsorted[index-1] <= unsorted[index]) //changed ">" to "<="
                 index++;
             else {
                 int temp = unsorted[index];
