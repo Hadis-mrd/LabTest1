@@ -1,14 +1,21 @@
 package labtest1;
-
+/**
+ * @author Moamin Al-Juboori (1187193)
+ * @version 1.0
+ * @since 2023-02-09
+ */
 public class LabTest1 {
-	
+	/**
+         * The method sorts the array
+         * @param it receives an unsorted array
+         */
     void sortFunction7(int unsorted[]) 
     {
         int len = unsorted.length;
-        for (int i = 0; i <= len; i++) 
+        for (int i = 0; i < len; i++) 
         { 
             int index = i;
-            for (int j = i+1; j < len-1; j++) 
+            for (int j = i+1; j < len; j++) 
                 if (unsorted[j] < unsorted[index])
                     index = j;
             int t = unsorted[index];
@@ -16,44 +23,49 @@ public class LabTest1 {
             unsorted[i] = t;
         }
     }
- 
+        /**
+         * The method sorts the array
+         * @param it receives an unsorted array
+         */
     void sortFunction8(int unsorted[]) 
-    {
-        int ln = unsorted.length;
-        for (int i = 1; i < ln; ++i) {
-            int item = unsorted[i];
-            int j = i + 1; 
-            
-            while (j > 0 && unsorted[j] > item) { 
-                unsorted[j + 1] = unsorted[j];
-                j = j - 1;
-            }
-            unsorted[j + 1] = item;
+{
+    int len = unsorted.length;
+    for (int i = 1; i < len; ++i) {
+        int item = unsorted[i];
+        int j = i - 1; 
+        
+        while (j >= 0 && unsorted[j] > item) { 
+            unsorted[j + 1] = unsorted[j];
+            j = j - 1;
         }
+        unsorted[j + 1] = item;
     }
-    
+}
+        /**
+         * The method sorts the array
+         * @param it receives an unsorted array
+         */
     void sortFunction9(int unsorted[])
-    {
-        int index = 0;
-        int n = unsorted.length;
-        while (index <= n) { 
-            if (index == 0)
-                index++; 
-            if (unsorted[index-1] > unsorted[index])
-                index++;
-            else {
-                int temp = unsorted[index];
-                unsorted[index] = unsorted[index - 1];
-                unsorted[index - 1] = temp;
-                index--;
-            }
+{
+    int n = unsorted.length;
+    for (int i = 1; i < n; i++) {
+        int j = i;
+        while (j > 0 && unsorted[j - 1] > unsorted[j]) {
+            int temp = unsorted[j];
+            unsorted[j] = unsorted[j - 1];
+            unsorted[j - 1] = temp;
+            j--;
         }
     }
-    
+}
+        /**
+         * The method sorts the array
+         * @param it receives an unsorted array
+         */
     void printArray(int arr[])
     {
         int n = arr.length;
-        for (int i=0; i<n; ++i)
+        for (int i = 0; i < n; ++i)
             System.out.print(arr[i]+" ");
         System.out.println();
     }
