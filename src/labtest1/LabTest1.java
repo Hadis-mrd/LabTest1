@@ -53,7 +53,7 @@ public class LabTest1 {
      * @param unsorted an unsorted array
      */
     public void sortFunction9(int unsorted[]) {
-        for(int x=0;x<unsorted.length;x++) {
+        for(int x=0;x<unsorted.length;x++) {//added loop make code run enough times
             
         int index = 1;
         int n = unsorted.length;
