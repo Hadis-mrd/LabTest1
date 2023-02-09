@@ -1,14 +1,15 @@
 package labtest1;
 
+
 public class LabTest1 {
 	
     void sortFunction7(int unsorted[]) 
     {
-        int len = unsorted.length;
-        for (int i = 0; i <= len; i++) 
+        int len = unsorted.length; // length of the array
+        for (int i = 0; i < len; i++) //changed from <= to < as the for loop was going too long 
         { 
             int index = i;
-            for (int j = i+1; j < len-1; j++) 
+            for (int j = i+1; j < len; j++) //-1 taken out as the for loop was running for too long  
                 if (unsorted[j] < unsorted[index])
                     index = j;
             int t = unsorted[index];
@@ -18,37 +19,38 @@ public class LabTest1 {
     }
  
     void sortFunction8(int unsorted[]) 
-    {
-        int ln = unsorted.length;
-        for (int i = 1; i < ln; ++i) {
-            int item = unsorted[i];
-            int j = i + 1; 
-            
-            while (j > 0 && unsorted[j] > item) { 
-                unsorted[j + 1] = unsorted[j];
-                j = j - 1;
+    {  
+    int len = unsorted.length;    
+    int item;
+        for(int i = len-1; i>=0; --i ){ // for loop was changed to a decrement so j is not outside boundaries of 
+         for(int j = i-1; j>=0; --j){ //while loop changed to for loop
+            if(unsorted[i]>unsorted[j]){
+               item = unsorted[i]; //item defined here rather than further up;
+               unsorted[i] = unsorted[j];//i and j swap places similar to original code.
+               unsorted[j] = item;
             }
-            unsorted[j + 1] = item;
+    }
         }
     }
     
     void sortFunction9(int unsorted[])
     {
         int index = 0;
-        int n = unsorted.length;
-        while (index <= n) { 
-            if (index == 0)
-                index++; 
-            if (unsorted[index-1] > unsorted[index])
-                index++;
+        int n = unsorted.length; //length of array
+        while (index < n) { //until index is larger than the length of the array ; changed to < from =< as it inclued n which would be null
+            if (index == 0) //if index is 0 plus 1
+                index++;  
+            else if (unsorted[index-1] > unsorted[index]) //changed to an else if statement so code does not use unsorted[index-1] when index == 0
+                index++;    //if val in unsorted[i] is smaller than the one in [i-1]
             else {
-                int temp = unsorted[index];
+                int temp = unsorted[index]; //if index is bigger than index-1, they swap places
                 unsorted[index] = unsorted[index - 1];
                 unsorted[index - 1] = temp;
-                index--;
+                index++; //changed from -- to ++
             }
         }
     }
+        
     
     void printArray(int arr[])
     {
