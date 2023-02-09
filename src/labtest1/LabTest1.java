@@ -74,7 +74,7 @@ public class LabTest1 {
         int[] unsorted9 = {76, 45, 10, 29, 10}; //Changed formatting
         obj.sortFunction9(unsorted9);
         System.out.println("Sorted array9 : ");
-        obj.printArray(unsorted9);
+        obj.printArray(unsorted9); 
 
     }
 
