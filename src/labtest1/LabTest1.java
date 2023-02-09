@@ -1,14 +1,27 @@
 package labtest1;
+/**
+ * 
+ * 
+ * @author Shane
+ * @version 1.0
+ * @since 2023 02 09
+ */
+
 
 public class LabTest1 {
 	
+    /**
+     * 
+     * 
+     * @param unsorted 
+     */
     void sortFunction7(int unsorted[]) 
     {
         int len = unsorted.length;
-        for (int i = 0; i <= len; i++) 
+        for (int i = 0; i < len; i++)//change i <= len to i < len 
         { 
             int index = i;
-            for (int j = i+1; j < len-1; j++) 
+            for (int j = i+1; j < len; j++) 
                 if (unsorted[j] < unsorted[index])
                     index = j;
             int t = unsorted[index];
@@ -17,29 +30,36 @@ public class LabTest1 {
         }
     }
  
+    /**
+     * 
+     * @param unsorted 
+     */
     void sortFunction8(int unsorted[]) 
     {
         int ln = unsorted.length;
-        for (int i = 1; i < ln; ++i) {
+        for (int i = 0; i < ln; ++i) { //should be i = 0 instead of i =1
             int item = unsorted[i];
-            int j = i + 1; 
+            int j = i - 1; //should be i-1 instead of j+1
             
-            while (j > 0 && unsorted[j] > item) { 
+            while (j >= 0 && unsorted[j] > item) { //should be j>= 0
                 unsorted[j + 1] = unsorted[j];
-                j = j - 1;
+                j = j - 1; 
             }
-            unsorted[j + 1] = item;
+            unsorted[j+1] = item;
         }
     }
-    
-    void sortFunction9(int unsorted[])
+    /**
+     * 
+     * @param unsorted 
+     */
+   void sortFunction9(int unsorted[])
     {
         int index = 0;
         int n = unsorted.length;
-        while (index <= n) { 
+        while (index < n) { //should be index < n
             if (index == 0)
                 index++; 
-            if (unsorted[index-1] > unsorted[index])
+            if (unsorted[index-1] <= unsorted[index]) //change > to <=
                 index++;
             else {
                 int temp = unsorted[index];
@@ -47,9 +67,13 @@ public class LabTest1 {
                 unsorted[index - 1] = temp;
                 index--;
             }
+            
         }
     }
-    
+    /**
+     * 
+     * @param arr 
+     */
     void printArray(int arr[])
     {
         int n = arr.length;
@@ -58,7 +82,10 @@ public class LabTest1 {
         System.out.println();
     }
  
-    
+    /**
+     * 
+     * @param args 
+     */
     public static void main(String[] args) {
         LabTest1 obj = new LabTest1();
         
