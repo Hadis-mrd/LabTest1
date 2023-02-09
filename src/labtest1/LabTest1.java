@@ -78,7 +78,8 @@ public class LabTest1 {
     }
  
     /**
- * this contains the unsorted arrays
+ * 
+     * @param args contains unsorted arrays
  */
     public static void main(String[] args) {
         LabTest1 obj = new LabTest1();
