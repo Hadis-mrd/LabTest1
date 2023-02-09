@@ -5,10 +5,10 @@ public class LabTest1 {
     void sortFunction7(int unsorted[]) 
     {
         int len = unsorted.length;
-        for (int i = 0; i <= len; i++) 
+        for (int i = 0; i < len; i++) 
         { 
             int index = i;
-            for (int j = i+1; j < len-1; j++) 
+            for (int j = i+1; j < len; j++) 
                 if (unsorted[j] < unsorted[index])
                     index = j;
             int t = unsorted[index];
@@ -20,32 +20,30 @@ public class LabTest1 {
     void sortFunction8(int unsorted[]) 
     {
         int ln = unsorted.length;
-        for (int i = 1; i < ln; ++i) {
+        for (int i = 0; i < ln; i++) {
             int item = unsorted[i];
             int j = i + 1; 
             
-            while (j > 0 && unsorted[j] > item) { 
-                unsorted[j + 1] = unsorted[j];
-                j = j - 1;
+            if (j < ln && unsorted[j] > item) { 
+            item = unsorted[j];    
+            unsorted[j] = unsorted[i];
             }
-            unsorted[j + 1] = item;
+            unsorted[i] = item;
         }
     }
     
     void sortFunction9(int unsorted[])
     {
-        int index = 0;
+        int index = 1;
         int n = unsorted.length;
-        while (index <= n) { 
-            if (index == 0)
-                index++; 
+        while (index < n) { 
             if (unsorted[index-1] > unsorted[index])
                 index++;
             else {
                 int temp = unsorted[index];
                 unsorted[index] = unsorted[index - 1];
                 unsorted[index - 1] = temp;
-                index--;
+                index++;
             }
         }
     }
@@ -76,7 +74,7 @@ public class LabTest1 {
         obj.sortFunction9(unsorted9);
         System.out.println("Sorted array9 : ");
         obj.printArray(unsorted9);
-       
+        
     }
     
 }
