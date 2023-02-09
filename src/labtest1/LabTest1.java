@@ -18,6 +18,8 @@ public class LabTest1 {
             int t = unsorted[index];
             unsorted[index] = unsorted[i];
             unsorted[i] = t;
+            //Test
+            
         }
     }
  
