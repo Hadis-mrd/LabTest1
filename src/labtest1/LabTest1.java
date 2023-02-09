@@ -21,7 +21,7 @@ public class LabTest1 {
         for (int i = 0; i < len; i++)//change i <= len to i < len 
         { 
             int index = i;
-            for (int j = i+1; j < len; j++) 
+            for (int j = i+1; j < len; j++) //j had to be less than len, not len-1 
                 if (unsorted[j] < unsorted[index])
                     index = j;
             int t = unsorted[index];
