@@ -48,26 +48,27 @@ public class LabTest1 {
     }
 
     /**
-     * sorts an array in decreasing order
+     * sorts an array in increasing order
      *
      * @param unsorted an unsorted array
      */
     public void sortFunction9(int unsorted[]) {
-        int index = 0;
+        for(int x=0;x<unsorted.length;x++) {
+            
+        int index = 1;
         int n = unsorted.length;
         while (index < n) {
-            if (index == 0) {
+            if (unsorted[index - 1] < unsorted[index]) {//made less than
                 index++;
-            }
-            if (unsorted[index - 1] > unsorted[index]) {
-                index++;
-            } else {
-                int temp = unsorted[index];
-                unsorted[index] = unsorted[index - 1];
-                unsorted[index - 1] = temp;
+            } else {//made to be increaing order
+                int temp = unsorted[index-1];
+                unsorted[index-1] = unsorted[index];
+                unsorted[index] = temp;
                 index++;//changed to ++
             }
         }
+        
+    }
     }
 
     void printArray(int arr[]) {
