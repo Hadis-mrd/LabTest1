@@ -62,17 +62,17 @@ public class LabTest1 {
     public static void main(String[] args) {
         LabTest1 obj = new LabTest1();
         
-        int unsorted7[] = {74,25,13,22,8};
+        int unsorted7[] = {76,45,10,29,10};
         obj.sortFunction7(unsorted7);
         System.out.println("Sorted array7 : ");
         obj.printArray(unsorted7);
         
-        int unsorted8[] = {74,25,13,22,8};
+        int unsorted8[] = {76,45,10,29,10};
         obj.sortFunction8(unsorted8);
         System.out.println("Sorted array8 : ");
         obj.printArray(unsorted8);
         
-        int unsorted9[] = {74,25,13,22,8};
+        int unsorted9[] = {76,45,10,29,10};
         obj.sortFunction9(unsorted9);
         System.out.println("Sorted array9 : ");
         obj.printArray(unsorted9);
