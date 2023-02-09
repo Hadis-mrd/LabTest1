@@ -14,7 +14,7 @@ public class LabTest1 {
      */
     public void sortFunction7(int unsorted[]) {
         int len = unsorted.length;
-        for (int i = 0; i < len; i++) {
+        for (int i = 0; i < len; i++) {//changed range
             int index = i;
             for (int j = i + 1; j < len; j++) {
                 if (unsorted[j] < unsorted[index]) {
@@ -33,14 +33,14 @@ public class LabTest1 {
      * @param unsorted an unsorted array
      */
     public void sortFunction8(int unsorted[]) {
-        int temp;
+        int temp;//added to help switch spots
         int ln = unsorted.length;
-        for (int i = 0; i < ln - 1; ++i) {
+        for (int i = 0; i < ln - 1; ++i) {//deleted item and changed range
             int j = i + 1;
 
             while (j > 0 && unsorted[j] <= unsorted[j - 1]) {
                 temp = unsorted[j - 1];
-                unsorted[j - 1] = unsorted[j];
+                unsorted[j - 1] = unsorted[j];//moved inside the loop
                 unsorted[j] = temp;
                 j = j - 1;
             }
@@ -65,7 +65,7 @@ public class LabTest1 {
                 int temp = unsorted[index];
                 unsorted[index] = unsorted[index - 1];
                 unsorted[index - 1] = temp;
-                index++;
+                index++;//changed to ++
             }
         }
     }
