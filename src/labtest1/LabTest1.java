@@ -34,9 +34,11 @@ public class LabTest1 {
     
     void sortFunction9(int unsorted[])
     {
-        int index = 1;
+        int index = 0;
         int n = unsorted.length;
         while (index < n) { 
+            if (index == 0)
+                index++; 
             if (unsorted[index-1] > unsorted[index])
                 index++;
             else {
