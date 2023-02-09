@@ -5,41 +5,53 @@ public class LabTest1 {
     void sortFunction7(int unsorted[]) 
     {
         int len = unsorted.length;
-        for (int i = 0; i <= len; i++) 
+    //Changed 'i<= len' to 'i<len'
+        for (int i = 0; i < len; i++) 
         { 
             int index = i;
-            for (int j = i+1; j < len-1; j++) 
-                if (unsorted[j] < unsorted[index])
+    //Changed 'len-1' to 'len' & 'j = i+1' to 'j=0'
+            for (int j = 0; j < len; j++){ 
+     //Changed '<' to '>'
+                if (unsorted[j] > unsorted[index])
                     index = j;
             int t = unsorted[index];
             unsorted[index] = unsorted[i];
             unsorted[i] = t;
+            }
         }
     }
+    //Fixed
  
     void sortFunction8(int unsorted[]) 
     {
         int ln = unsorted.length;
-        for (int i = 1; i < ln; ++i) {
+      //Changed i = 1 to i = 0
+        for (int i = 0; i < ln; ++i) {
             int item = unsorted[i];
-            int j = i + 1; 
-            
-            while (j > 0 && unsorted[j] > item) { 
-                unsorted[j + 1] = unsorted[j];
-                j = j - 1;
+      //Changed 'j = i+1' to 'j=0'
+            int j = i-1; 
+//Changed several parameters in the while loop to get rid of syntax error and adjust some logistical error       
+            while ((j > 0) && (unsorted[j+1] > unsorted[j])) {
+                unsorted[j+1] = unsorted[j];
+                j--;
+                
             }
-            unsorted[j + 1] = item;
+            unsorted[j+1] = item;
+            
         }
     }
+//Sorts in descending order
     
     void sortFunction9(int unsorted[])
     {
         int index = 0;
         int n = unsorted.length;
-        while (index <= n) { 
+ //Changed 'index <= n' to 'index < n'
+        while (index < n) { 
             if (index == 0)
                 index++; 
-            if (unsorted[index-1] > unsorted[index])
+ //Changed '>' to '<'
+            if (unsorted[index-1] < unsorted[index])
                 index++;
             else {
                 int temp = unsorted[index];
@@ -49,6 +61,7 @@ public class LabTest1 {
             }
         }
     }
+//Fixed
     
     void printArray(int arr[])
     {
