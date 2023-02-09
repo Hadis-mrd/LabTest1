@@ -1,34 +1,45 @@
 package labtest1;
 
+/**
+ * @author mbhatt13 
+ */
 public class LabTest1 {
 	
     void sortFunction7(int unsorted[]) 
     {
         int len = unsorted.length;
-        for (int i = 0; i <= len; i++) 
+        for (int i = 0; i <= len-1; i++) //Need len-1 so it doesnt go out of bounds from the array
         { 
             int index = i;
-            for (int j = i+1; j < len-1; j++) 
-                if (unsorted[j] < unsorted[index])
-                    index = j;
+            for (int j = i; j < len; j++) //No -1 there should be
+            if (unsorted[j] < unsorted[index])
+            index = j;
             int t = unsorted[index];
             unsorted[index] = unsorted[i];
             unsorted[i] = t;
+            //fixed indentation
+                  
         }
     }
- 
+    /**
+     * 
+     * @param unsorted the array being passed into the sort function
+     */
     void sortFunction8(int unsorted[]) 
     {
         int ln = unsorted.length;
         for (int i = 1; i < ln; ++i) {
             int item = unsorted[i];
-            int j = i + 1; 
+            int j = i-1; 
             
-            while (j > 0 && unsorted[j] > item) { 
+            while (j >= 0 && unsorted[j] > item) { //added >= instead of > so it includes 0
+                
+                int temparr = unsorted[j+1]; //added a temporary array
                 unsorted[j + 1] = unsorted[j];
-                j = j - 1;
+        unsorted[j] = temparr;
+        j = j - 1;
             }
-            unsorted[j + 1] = item;
+            
         }
     }
     
@@ -36,17 +47,17 @@ public class LabTest1 {
     {
         int index = 0;
         int n = unsorted.length;
-        while (index <= n) { 
+        while (index < n) { //<= to <n
             if (index == 0)
                 index++; 
             if (unsorted[index-1] > unsorted[index])
                 index++;
-            else {
-                int temp = unsorted[index];
-                unsorted[index] = unsorted[index - 1];
-                unsorted[index - 1] = temp;
-                index--;
-            }
+        else {
+            int temp = unsorted[index];
+            unsorted[index] = unsorted[index - 1];
+            unsorted[index - 1] = temp;
+            index--;
+        }
         }
     }
     
